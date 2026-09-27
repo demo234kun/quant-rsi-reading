@@ -2,3 +2,6 @@
 *.pyc
 data/*.parquet
 data/discovery_tree.jsonl
+
+data/*.parquet
+data/discovery_tree*.jsonl
