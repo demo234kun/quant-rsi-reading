@@ -1,0 +1,4 @@
+﻿__pycache__/
+*.pyc
+data/*.parquet
+data/discovery_tree.jsonl
