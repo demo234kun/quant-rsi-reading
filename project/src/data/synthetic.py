@@ -28,11 +28,13 @@ def generate_synthetic_panel(
         drift = rng.uniform(-0.0002, 0.0005)
         vol = rng.uniform(0.01, 0.03)
 
-        # regime 切换：第 600 天和 1100 天改变市场方向
+        # regime 切换：按 40% 和 70% 位置切三段
+        c1 = int(n_days * 0.4)
+        c2 = int(n_days * 0.7)
         mkt = np.zeros(n_days)
-        mkt[:600] = rng.normal(0.0005, 0.01, 600)     # 牛市
-        mkt[600:1100] = rng.normal(-0.0008, 0.015, 500)  # 熊市
-        mkt[1100:] = rng.normal(0.0003, 0.012, n_days - 1100)  # 震荡
+        mkt[:c1] = rng.normal(0.0005, 0.01, c1)
+        mkt[c1:c2] = rng.normal(-0.0008, 0.015, c2 - c1)
+        mkt[c2:] = rng.normal(0.0003, 0.012, n_days - c2)
 
         idio = rng.normal(0, vol, n_days)
         ret = drift + beta * mkt + idio
