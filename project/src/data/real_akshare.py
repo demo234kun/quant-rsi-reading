@@ -1,54 +1,71 @@
 """
-真实数据加载器（A股）。
-依赖: akshare（pip install akshare）
+真实数据加载器（A股，新浪源）。
 注意：所有结果必须从真实数据跑出，不允许手填。
 """
 from __future__ import annotations
 from pathlib import Path
+import time
 import pandas as pd
 
 
-def load_csi300_daily(start: str = "20190101", end: str = "20241231") -> pd.DataFrame:
-    """加载 CSI300 成分股日线（真实数据）。
+def _to_sina_symbol(code: str) -> str:
+    """000001 -> sz000001, 600519 -> sh600519"""
+    code = str(code).zfill(6)
+    if code.startswith(("6", "9")):
+        return f"sh{code}"
+    else:
+        return f"sz{code}"
 
-    返回 MultiIndex (date, symbol) DataFrame: open/high/low/close/volume/ret。
-    需要联网 + akshare。如果 akshare 不可用，返回 None 并提示。
-    """
+
+def load_csi300_daily(start: str = "20190101", end: str = "20241231") -> pd.DataFrame:
+    """加载 CSI300 成分股日线（新浪源）。"""
     try:
         import akshare as ak
     except ImportError:
-        print("[WARN] akshare 未安装: pip install akshare")
+        print("[WARN] akshare 未安装")
         return None
 
     try:
-        # 获取成分股
         constituents = ak.index_stock_cons_csindex(symbol="000300")
-        symbols = constituents["成分券代码"].tolist()[:50]  # 先取前 50 只，避免太慢
-        print(f"[data] CSI300 成分股 {len(symbols)} 只，拉日线 {start}~{end}...")
+        codes = constituents["成分券代码"].tolist()[:50]
+        print(f"[data] CSI300 成分股 {len(codes)} 只，拉日线 {start}~{end}（新浪源）...")
 
         rows = []
-        for sym in symbols:
+        for idx, code in enumerate(codes):
+            sym = _to_sina_symbol(code)
+            df = None
+            for attempt in range(3):
+                try:
+                    df = ak.stock_zh_a_daily(symbol=sym, start_date=start, end_date=end, adjust="qfq")
+                    break
+                except Exception:
+                    if attempt < 2:
+                        time.sleep(1.0)
+            if df is None or len(df) == 0:
+                continue
             try:
-                df = ak.stock_zh_a_hist(
-                    symbol=sym, period="daily",
-                    start_date=start, end_date=end, adjust="qfq"
-                )
-                if df is None or len(df) == 0:
-                    continue
                 df = df.rename(columns={
-                    "日期": "date", "开盘": "open", "最高": "high",
-                    "最低": "low", "收盘": "close", "成交量": "volume",
+                    "date": "date", "open": "open", "high": "high",
+                    "low": "low", "close": "close", "volume": "volume",
                 })
-                df["symbol"] = sym
+                df["symbol"] = code
                 df["date"] = pd.to_datetime(df["date"])
                 df["ret"] = df["close"].pct_change()
-                rows.append(df[["date", "symbol", "open", "high", "low", "close", "volume", "ret"]])
+                keep = df[["date", "symbol", "open", "high", "low", "close", "volume", "ret"]].dropna()
+                rows.append(keep)
             except Exception as e:
-                print(f"  [skip] {sym}: {e}")
+                print(f"  [parse-skip] {code}: {e}")
+            if (idx + 1) % 10 == 0:
+                print(f"  进度 {idx+1}/{len(codes)}, 成功 {len(rows)}")
+            time.sleep(0.2)
 
+        if not rows:
+            print("[ERROR] 无数据")
+            return None
         panel = pd.concat(rows, ignore_index=True)
         panel = panel.set_index(["date", "symbol"]).sort_index()
-        print(f"[data] 面板形状: {panel.shape}")
+        print(f"[data] 面板形状: {panel.shape}, {panel.index.get_level_values(0).nunique()} 天, "
+              f"{panel.index.get_level_values(1).nunique()} 只")
         return panel
 
     except Exception as e:
