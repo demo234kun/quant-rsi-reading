@@ -15,6 +15,7 @@ from src.dsl.operators import OPERATORS, list_operators
 from src.evaluator.sealed import SplitConfig, SealedEvaluator, per_regime_ic
 from src.memory.tree import DiscoveryTree, ExperimentNode
 from src.controller.planner import BudgetState, decide_action, check_fuel
+from src.strategy.backtest import evaluate_strategy
 
 
 PASS = 0
@@ -167,6 +168,19 @@ for i in range(5):
     r1 = ev2.validate(f, f"smoke_{i}", f"roll_{i}")
     r2 = ev2.finalize(f, f"smoke_{i}", f"roll_{i}")
 check("e2e_5factors", True, "5 factors evaluated without error")
+
+
+# ========== 8. 策略回测层（合成数据，仅管线验证） ==========
+print("\n[8/8] 策略回测层")
+test_d2 = all_d2[all_d2 >= pd.Timestamp(cfg2.test_start)]
+f_test = f[f.index.get_level_values(0).isin(test_d2)]
+fr_test = fr2[fr2.index.get_level_values(0).isin(test_d2)]
+strat = evaluate_strategy(f_test, fr_test, "test_strat", cost_bps=2.0,
+                           notes="合成数据，仅管线验证")
+check("strat_days", strat.n_days > 0, f"got {strat.n_days} days")
+check("strat_sharpe_finite", np.isfinite(strat.sharpe), f"sharpe={strat.sharpe}")
+check("strat_maxdd", -1.0 <= strat.max_drawdown <= 0.0, f"dd={strat.max_drawdown}")
+check("strat_cost", strat.cost_bps == 2.0)
 
 
 # ========== 结果 ==========
