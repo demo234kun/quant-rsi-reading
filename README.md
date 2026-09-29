@@ -15,10 +15,6 @@
 | 06 | [AutoScientist-Quant：把量化研究当预算搜索](papers/06_AutoScientist-Quant/notes.md) | Zongqian Li 等（含 Google DeepMind 背景） | 和 AQuA 同期对手；单一 controller 根据剩余预算统一调度从假设到 deployable strategy 的全流程 | RSI · budgeted search · controller · 共享 memory · CSI · 对照 AQuA | [arXiv:2608.28632](https://arxiv.org/abs/2608.28632) | — | [思考](papers/06_AutoScientist-Quant/thoughts.md) |
 | 07 | [QuantEvolver：把反馈从 prompt 搬进权重](papers/07_QuantEvolver/notes.md) | Lingzhe Zhang 等（Philip S. Yu 团队） | RFT 替代 prompt-loop；把可执行回测评估转成 Miner LLM 参数更新，Diversity-Complementarity Reward 抗趋同 | RSI · RFT · Factor DSL · Regime Backtest · 抗趋同 · 因子挖掘 | [arXiv:2605.15412](https://arxiv.org/abs/2605.15412) | — | [思考](papers/07_QuantEvolver/thoughts.md) |
 
----
-
-## 🗂 目录结构
-
 
 -
 ## 📖 引用与来源
