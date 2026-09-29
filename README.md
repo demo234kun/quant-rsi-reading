@@ -1,28 +1,5 @@
 # Quant Papers · 量化研究精读库
 
-> 一个个人收藏库：收集"递归自我改进（RSI）× 量化交易"方向的精致文章。
-> 每篇含：论文全文 PDF · 微信解读原文存档（如有）· 个人解读笔记 · 个人思考。
-> 创建：2026-09-27
-
----
-
-## 🧭 这个库在看什么
-
-主线只有一条：**当 AI 开始自动做量化研究，它怎么不骗自己？**
-
-七篇文章构成一个递进的逻辑链：
-
-```
-05_RSI_ThreeReins  ── 总框架：三根缰绳（裁判 / 燃料 / 传动 τ）
-        │
-        ├── 01_AQuA              ── 缰绳一最严样本：评估器焊死，密封沙箱（学术）
-        ├── 06_AutoScientist-Quant ── AQuA 同期对手：单一 controller 统一调度（对照）
-        ├── 03_Astar             ── 缰绳一工业样本：环内学习型裁判 + 外圈真实 A/B（生产）
-        ├── 07_QuantEvolver      ── 经验训进权重：RFT 替代 prompt-loop（因子挖掘）
-        ├── 04_Dream-RSI         ── 缰绳三 τ>1 样本：元层做梦，不重训就继承（研究）
-        │
-        └── 02_AutoResearch_Industry ── 产业落地：桥水/Man/Citadel/幻方已经在花钱买
-```
 
 ---
 
@@ -42,72 +19,8 @@
 
 ## 🗂 目录结构
 
-```
-quant_library/
-├── README.md                          ← 你在这里
-└── papers/
-    ├── 01_AQuA/
-    │   ├── paper.pdf                  ← arXiv 全文
-    │   ├── wechat.md                   ← 微信解读原文存档
-    │   ├── notes.md                    ← 个人解读笔记
-    │   └── thoughts.md                 ← 个人思考
-    ├── 02_AutoResearch_Industry/
-    │   ├── wechat.md
-    │   ├── notes.md
-    │   └── thoughts.md
-    ├── 03_Astar/
-    │   ├── paper.pdf
-    │   ├── wechat.md
-    │   ├── notes.md
-    │   └── thoughts.md
-    ├── 04_Dream-RSI/
-    │   ├── paper.pdf
-    │   ├── wechat.md
-    │   ├── notes.md
-    │   └── thoughts.md
-    ├── 05_RSI_ThreeReins/
-    │   ├── wechat.md
-    │   ├── notes.md
-    │   └── thoughts.md
-    ├── 06_AutoScientist-Quant/
-    │   ├── paper.pdf
-    │   ├── notes.md
-    │   └── thoughts.md
-    └── 07_QuantEvolver/
-        ├── paper.pdf
-        ├── notes.md
-        └── thoughts.md
-```
 
----
-
-## 🧩 关键数字速查
-
-| 指标 | 数值 | 出处 |
-|---|---|---|
-| AQuA Part I 加密货币组合 Spearman IC | ~0.190（单因子仅 0.026–0.037） | 01 |
-| AQuA Part II 美股 per-stock IC | +0.0843（最强基线 GRU +0.0613） | 01 |
-| AQuA 美元中性策略 Sharpe @2bp | +2.50（完全因果 walk-forward +2.00） | 01 |
-| Astar 单提案真实执行成功率 | 0.6786（GPT-5.5 0.3071 / 人类 0.3229） | 03 |
-| Astar 奖励模型 AUC | 0.8487（人类专家 0.6142） | 03 |
-| Astar 线上 A/B | GMV +4.86%、广告收入 +1.82% | 03 |
-| Dream-RSI 求解器 runtime | 3587ms → 2931ms（Gemini-3.1-Pro） | 04 |
-| 自我裁判 24 代后报告/真实裂缝 | +1.19（密封裁判仅 -0.002） | 05 |
-| Jane Street 2026.7 单月亏损 | ~150 亿美元 | 02 |
-| AutoScientist-Quant | CSI universe 几乎所有指标最优（跨 backbone/market） | 06 |
-| QuantEvolver | 三个 market benchmark 主指标全面超 LLM 基线 | 07 |
-
----
-
-## 🛣 建议阅读路线
-
-- **第一次读**：05（框架）→ 01（最严样本）→ 06（同期对照）→ 03（工业样本）
-- **做量化关心落地**：01 → 06 → 03 → 07 → 02
-- **关心方法论/不做量化**：05 → 04 → 03 → 07
-- **想看行业八卦与事故**：02
-
----
-
+-
 ## 📖 引用与来源
 
 ### 论文
@@ -142,12 +55,3 @@ quant_library/
 - Khandani & Lo, *What Happened to the Quants in August 2007?*
 
 ---
-
-## ⚠️ 数据真实性声明
-
-- 所有论文数字来自 arXiv 摘要 / 论文 PDF / 微信解读原文，未编造。
-- 微信文章均已存档到对应 `wechat.md`，未做改写。
-- 06、07 两篇暂无微信解读，笔记基于 arXiv 摘要与论文 PDF，未披露的具体数字标注为"待读 PDF 补"。
-- 标注"模拟"的数字均为论文作者口径，未实盘验证。
-- 行业调查（02）中的机构业绩为公开媒体口径，不构成投资建议。
-- 个人思考（`thoughts.md`）为本人观点，与论文无关。
