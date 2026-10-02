@@ -4,3 +4,6 @@ Thumbs.db
 .vscode/
 __pycache__/
 *.pyc
+
+# 数据缓存（可由 project/scripts 重新下载生成）
+*.parquet
