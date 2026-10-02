@@ -29,18 +29,45 @@ class StrategyResult:
         return asdict(self)
 
 
+def estimate_direction(factor: pd.Series, fwd_ret: pd.Series) -> int:
+    """
+    在 validation（或 train）数据上估计因子多空方向。
+
+    返回:
+        +1: 做多高因子值、做空低因子值（IC 为正）
+        -1: 做多低因子值、做空高因子值（IC 为负，如反转/低波动因子）
+
+    注意：这个方向只能在 validation/train 上估计，
+    test 上不能重新估计（否则选择泄漏）。
+    """
+    df = pd.DataFrame({"f": factor, "r": fwd_ret}).dropna()
+    daily_ic = []
+    for d, g in df.groupby(level=0):
+        if len(g) >= 5:
+            from scipy.stats import spearmanr
+            ic = spearmanr(g["f"], g["r"])[0]
+            if np.isfinite(ic):
+                daily_ic.append(ic)
+    if not daily_ic:
+        return 1
+    mean_ic = np.mean(daily_ic)
+    return -1 if mean_ic < 0 else 1
+
+
 def long_short_portfolio(
     factor: pd.Series,        # MultiIndex (date, symbol)
     fwd_ret: pd.Series,       # MultiIndex (date, symbol)，forward 收益
     n_quantiles: int = 5,
     cost_bps: float = 2.0,    # 单边成本，A股默认 2bp
+    direction: int = 1,       # +1=做多高因子, -1=做多低因子（从 validation 估计）
 ) -> tuple[pd.Series, pd.Series]:
     """分层多空组合。
 
     每日横截面按因子分 n_quantiles 层：
-    - 做多 top quantile，做空 bottom quantile
+    - direction=+1: 做多 top（高因子），做空 bottom（低因子）
+    - direction=-1: 做多 bottom（低因子），做空 top（高因子）
     - 权重等权
-    - 扣成本：换手率 × 单边成本 × 2（双边）
+    - 扣成本
 
     返回：(日度毛收益 Series, 日度净收益 Series)
     """
@@ -54,18 +81,15 @@ def long_short_portfolio(
                 return np.nan
             top = g[g["q"] == g["q"].max()]["fwd"].mean()
             bot = g[g["q"] == g["q"].min()]["fwd"].mean()
-            return top - bot
+            spread = top - bot
+            return direction * spread   # 按 validation 确定的方向
         except Exception:
             return np.nan
 
     daily_gross = df.groupby(level=0).apply(_daily_long_short).dropna()
     daily_gross.name = "gross"
 
-    # 换手率近似：多空组合每日调仓，双边换手率 ≈ 2/n_top + 2/n_bot
-    # 简化：假设每日 100% 换仓（保守），实际算符号变化
-    # 这里用更保守的估计：双边成本 = 2 * turnover_rate * cost_bps/1e4
-    # 近似 turnover = 1.0（每日全调），实际应该算持仓变化
-    # 保守取双边 4bp/天
+    # 成本：保守每日双边 4bp
     daily_cost = pd.Series(4.0 / 1e4, index=daily_gross.index)
     daily_net = daily_gross - daily_cost
 
@@ -78,10 +102,16 @@ def evaluate_strategy(
     factor_id: str,
     n_quantiles: int = 5,
     cost_bps: float = 2.0,
+    direction: int = 1,
     notes: str = "",
 ) -> StrategyResult:
-    """端到端：因子 → 多空组合 → 回测指标。"""
-    gross, net = long_short_portfolio(factor, fwd_ret, n_quantiles, cost_bps)
+    """端到端：因子 → 多空组合 → 回测指标。
+
+    direction 必须在 validation/train 上用 estimate_direction 估计，
+    不能在 test 上重新估计。
+    """
+    gross, net = long_short_portfolio(factor, fwd_ret, n_quantiles, cost_bps,
+                                       direction)
 
     if len(net) < 20:
         return StrategyResult(
