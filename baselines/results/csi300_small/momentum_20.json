@@ -1,0 +1,21 @@
+{
+  "method": "momentum_20",
+  "category": "handcrafted",
+  "paper_id": "baseline",
+  "dataset": "csi300_small",
+  "n_test_days": 84,
+  "n_symbols": 15,
+  "horizon": 5,
+  "direction": 1,
+  "mean_ic": -0.08277688994156909,
+  "ic_ir": -0.25370612456763797,
+  "mean_rank_ic": -0.09653567002640683,
+  "rank_ic_ir": -0.29755588424789364,
+  "long_short_ann_return": 0.026630124671942576,
+  "long_short_sharpe": 0.07670937035240322,
+  "max_drawdown": -0.16650678123894308,
+  "turnover": 0.8571428571428571,
+  "cost_bps": 2.0,
+  "fidelity": "faithful_core",
+  "notes": "静态手工因子（对照）"
+}

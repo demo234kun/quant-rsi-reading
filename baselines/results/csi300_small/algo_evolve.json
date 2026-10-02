@@ -1,0 +1,21 @@
+{
+  "method": "algo_evolve",
+  "category": "strategy_evolution",
+  "paper_id": "10",
+  "dataset": "csi300_small",
+  "n_test_days": 84,
+  "n_symbols": 15,
+  "horizon": 5,
+  "direction": -1,
+  "mean_ic": -0.06173830759771584,
+  "ic_ir": -0.17135217041367043,
+  "mean_rank_ic": -0.07118249423483093,
+  "rank_ic_ir": -0.22274944789893297,
+  "long_short_ann_return": -0.3830884304867377,
+  "long_short_sharpe": -1.1082228547037893,
+  "max_drawdown": -0.2148182772484148,
+  "turnover": 1.0158730158730158,
+  "cost_bps": 2.0,
+  "fidelity": "meta_evolution_approx",
+  "notes": "双层元进化机制（内层程序进化、外层选择搜索启发式）忠实；LLM 变异用规则/经验替代"
+}

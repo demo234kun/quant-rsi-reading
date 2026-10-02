@@ -10,45 +10,56 @@ import pandas as pd
 from typing import Callable, Dict
 
 
-# ---------- 时序算子（只依赖回看窗口） ----------
+# ---------- 时序算子（只依赖回看窗口，严格按 symbol 分组） ----------
+# 注意：MultiIndex 为 (date, symbol)，裸 shift/rolling 会跨股票错位，
+# 因此每个时序算子必须按 symbol（level=1）分组。
 
 def lag(x: pd.Series, k: int) -> pd.Series:
     """滞后 k 期。t 时刻输出 x[t-k]。"""
-    return x.shift(k)
+    return x.groupby(level=1).shift(k)
 
 
 def delta(x: pd.Series, k: int) -> pd.Series:
     """k 期差分：x[t] - x[t-k]。"""
-    return x.diff(k)
+    return x.groupby(level=1).diff(k)
 
 
 def rolling_mean(x: pd.Series, k: int) -> pd.Series:
     """k 期滚动均值（含 t 时刻）。"""
-    return x.rolling(k, min_periods=k).mean()
+    return x.groupby(level=1).transform(
+        lambda s: s.rolling(k, min_periods=k).mean())
 
 
 def rolling_std(x: pd.Series, k: int) -> pd.Series:
-    return x.rolling(k, min_periods=k).std()
+    return x.groupby(level=1).transform(
+        lambda s: s.rolling(k, min_periods=k).std())
 
 
 def rolling_max(x: pd.Series, k: int) -> pd.Series:
-    return x.rolling(k, min_periods=k).max()
+    return x.groupby(level=1).transform(
+        lambda s: s.rolling(k, min_periods=k).max())
 
 
 def rolling_min(x: pd.Series, k: int) -> pd.Series:
-    return x.rolling(k, min_periods=k).min()
+    return x.groupby(level=1).transform(
+        lambda s: s.rolling(k, min_periods=k).min())
 
 
 def rolling_rank(x: pd.Series, k: int) -> pd.Series:
     """t 时刻的值在过去 k 期（含 t）中的分位。"""
-    def _rank(window):
-        return (window[-1] >= window).mean()
-    return x.rolling(k, min_periods=k).apply(_rank, raw=True)
+    def _per(s):
+        return s.rolling(k, min_periods=k).apply(
+            lambda w: (w[-1] >= w).mean(), raw=True)
+    return x.groupby(level=1).transform(_per)
 
 
 def rolling_corr(a: pd.Series, b: pd.Series, k: int) -> pd.Series:
-    """a 和 b 在过去 k 期（含 t）的滚动相关系数。"""
-    return a.rolling(k, min_periods=k).corr(b)
+    """a 和 b 在过去 k 期（含 t）的滚动相关系数，按 symbol 对齐。"""
+    aligned = pd.concat([a.rename("a"), b.rename("b")], axis=1)
+    parts = []
+    for sym, g in aligned.groupby(level=1):
+        parts.append(g["a"].rolling(k, min_periods=k).corr(g["b"]))
+    return pd.concat(parts).sort_index()
 
 
 # ---------- 横截面算子（同一截面内操作） ----------
