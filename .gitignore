@@ -7,3 +7,7 @@ __pycache__/
 
 # 数据缓存（可由 project/scripts 重新下载生成）
 *.parquet
+
+# 第三方框架完整代码与压缩包（仅保留复现记录，原仓库见记录链接）
+reproduction/*.zip
+reproduction/*-main/
