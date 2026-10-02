@@ -76,6 +76,7 @@
   - 生成候选数学表达式因子；校验语法、约束表达式形式；送入沙箱回测；
   - 沙箱返回 IC；将新因子 + 评估结果存入证据库；下一轮 LLM 基于证据库生成新假设；
   - 最终对有效因子做组合，得到复合 Alpha 信号。
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/10dea0e2-88bd-4c6b-a922-2ad0d0a35afd" />
 
 **3. Part II：Config-driven hybrid time-series model loop（配置驱动时序模型迭代闭环）**
 - 是什么：不直接写模型代码，只修改模型配置 diff 的迭代智能体，基于混合时序模型架构。
@@ -85,6 +86,7 @@
   - 沙箱读取配置，自动构建时序模型、训练、样本外评估；
   - 评估结果存入证据库，下一轮基于历史模型实验结果生成新配置；
   - 不修改底层训练框架，仅修改配置参数。
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/452cd2b2-dcea-4cfa-9356-9b968496572f" />
 
 **4. Recursive Self-Improvement（流程层面递归自改进）**
 - 是什么：每一轮实验产生的验证证据，作为下一轮假设生成的上下文，持续优化提案质量；不是模型权重自微调，是假设生成策略的迭代改进。
@@ -116,6 +118,7 @@
 - Part II（时序模型）：US equities 美股个股；股票基本面 + 量价时序特征；标签为个股未来收益。
   - 时间区间：最终策略评估 2021–2025 样本外。
   - 预处理、标签定义、滚动窗口全部冻结在沙箱内部，智能体不可修改。
+![Uploading image.png…]()
 
 **模型结构**
 - LLM 基座：论文未写明具体 LLM 型号；仅说明使用大语言模型作为智能体的推理引擎；
