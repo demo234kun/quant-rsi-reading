@@ -54,6 +54,8 @@
 1. Part I：Symbolic Factor Discovery（符号因子挖掘多智能体流水线，加密资产）
 2. Part II：Trainable Time-Series Model Development（可训练时序模型配置迭代闭环，美股股票）
 
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/d72f959a-1d61-48e5-83d4-3891415541df" />
+
 两个系统不共享智能体、记忆、候选池、研究状态，各自独立跑相同的 5 阶段闭环：
 假设生成 → 构造候选 → 沙箱执行实验 → 评估并归档证据 → 使用历史证据更新假设生成器 → 下一轮
 
