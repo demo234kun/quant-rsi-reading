@@ -14,7 +14,7 @@
 
 ```
 ┌──────────────┬──────────────────────────────────────────────────┐
-│ 数据进化      │ 迭代数据源 / 标签 / 特征构造（当前几乎空白 ⚠️）      │
+│ 数据进化      │ 迭代数据源 / 标签 / 特征构造（本库 3 篇，最易泄漏）    │
 ├──────────────┼──────────────────────────────────────────────────┤
 │ 因子进化      │ 迭代符号因子表达式 / 因子生成模型（本库 4 篇）        │
 ├──────────────┼──────────────────────────────────────────────────┤
@@ -48,15 +48,13 @@
 
 ### 🥇 数据进化（Data Evolution）
 
-> ⚠️ **当前没有专门论文**。数据/标签一旦开放给 agent 迭代，最易引入泄漏（AQuA 因此把数据焊死），且"新数据是否更好"缺外部判据。这是明确的研究空白。
+> 数据/标签一旦开放给 agent 迭代，最易引入泄漏（AQuA 因此把数据焊死），且"新数据是否更好"缺外部判据。下列三篇是这一方向目前找到的真实工作（2025–2026）。
 
-候选待补（已检索，未归档）：
-
-| 文章 | 定位 | 链接 |
-|---|---|---|
-| R&D-Agent-Quant（微软，NeurIPS 2025） | 首个数据中心化多智能体，因子-模型联合优化，成本 <$10、ARR 约 2× | [arXiv:2505.15155](https://arxiv.org/abs/2505.15155) |
-| TradingGroup | 含自动数据合成与标注 pipeline + 预测/风格/决策三类 agent | [arXiv:2508.17565](https://arxiv.org/abs/2508.17565) |
-| FactorEngine | Bootstrapping（知识注入建池）→ Evolution → Integration | [arXiv:2603.16365](https://arxiv.org/abs/2603.16365) |
+| # | 文章 | 笔记 | 作者 / 来源 | 一句话概括 | 关键词 | 对应论文 | 代码 | 个人思考 |
+|---|------|------|------------|-----------|--------|----------|------|----------|
+| 12 | [R&D-Agent-Quant](papers/data_evolution/12_RD-Agent-Quant/notes.md) | Yuante Li 等（Microsoft） | 首个 data-centric 多智能体，因子-模型联合优化；Research/Development 闭环 + 多臂老虎机调度，ARR 最高约 2×、因子少 70% | data-centric · 因子-模型联合优化 · Co-STEER · 多臂老虎机 · feedback | [arXiv:2505.15155](https://arxiv.org/abs/2505.15155) | [microsoft/RD-Agent](https://github.com/microsoft/RD-Agent) | [思考](papers/data_evolution/12_RD-Agent-Quant/thoughts.md) |
+| 13 | [TradingGroup](papers/data_evolution/13_TradingGroup/notes.md) | Feng Tian, Flora D. Salim, Hao Xue | 多智能体交易系统，自我反思 + 端到端数据合成/标注管线，用交易活动数据反哺后训练；含动态止损/止盈 | 数据合成 · 自我反思 · 多智能体 · 后训练 · 动态风控 | [arXiv:2508.17565](https://arxiv.org/abs/2508.17565) | 待核实 | [思考](papers/data_evolution/13_TradingGroup/thoughts.md) |
+| 14 | [FactorEngine](papers/data_evolution/14_FactorEngine/notes.md) | Qinhong Lin 等 | 程序级因子挖掘，因子=图灵完备代码；知识注入把研报转为可执行因子，经验知识库支持从失败学习 | 知识注入 · 程序级因子 · 三分离 · 经验知识库 · 从失败学习 | [arXiv:2603.16365](https://arxiv.org/abs/2603.16365) | 待核实 | [思考](papers/data_evolution/14_FactorEngine/thoughts.md) |
 
 ---
 
@@ -102,7 +100,10 @@ quant_library/
 ├── DESIGN.md / PAPER_PROPOSAL.md / PAPER_DIRECTIONS.md / RESULTS.md
 ├── project/                           ← RegimeSeal 可运行研究管线
 └── papers/
-    ├── data_evolution/                ← （待补，当前空白）
+    ├── data_evolution/
+    │   ├── 12_RD-Agent-Quant/ (paper.pdf, notes.md, wechat.md, thoughts.md, deep_reading.md)
+    │   ├── 13_TradingGroup/   (paper.pdf, notes.md, wechat.md, thoughts.md, deep_reading.md)
+    │   └── 14_FactorEngine/   (paper.pdf, notes.md, wechat.md, thoughts.md, deep_reading.md)
     ├── factor_evolution/
     │   ├── 01_AQuA/        (paper.pdf, wechat.md, notes.md, thoughts.md, deep_reading.md)
     │   ├── 03_Astar/       (paper.pdf, wechat.md, notes.md, thoughts.md, deep_reading.md)
@@ -197,7 +198,7 @@ quant_library/
 - 所有论文数字来自 arXiv 摘要 / 论文 PDF / 微信解读原文，未编造。
 - 微信文章均已存档到对应 `wechat.md`，未做改写。
 - 08–11 四篇策略文章目前仅归档 PDF，关键数字与笔记标注"待读 PDF 补"，未预填。
-- 数据进化类（R&D-Agent-Quant / TradingGroup / FactorEngine）已检索到真实链接但未下载归档。
+- 数据进化类（R&D-Agent-Quant / TradingGroup / FactorEngine）已下载归档（12–14）；TradingGroup / FactorEngine 代码链接待核实。
 - 标注"模拟"的数字均为论文作者口径，未实盘验证。
 - 行业调查（02）中的机构业绩为公开媒体口径，不构成投资建议。
 - 个人思考（`thoughts.md`）为本人观点，与论文无关。
