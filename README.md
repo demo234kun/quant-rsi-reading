@@ -36,7 +36,7 @@
         ├── 08_EvolveTrade       ── 策略：LLM 从交易经验重写自己的 policy
         ├── 09_SHARP             ── 策略：可审计符号规则，原子化编辑
         ├── 10_AlgoEvolve        ── 策略：交易程序元进化，涌现 regime-adaptive
-        ├── 11_RecursiveMultiAgent ── 策略：组合策略递归 + 风险感知 RL
+        ├── 11_RecursiveMultiAgent ── 策略：递归组合策略 + 风险感知多智能体仲裁
         ├── 04_Dream-RSI         ── 元层：做梦进化，不重训就继承
         │
         └── 02_AutoResearch_Industry ── 产业落地：桥水/Man/Citadel/幻方
@@ -76,7 +76,7 @@
 | 08 | EvolveTrade：经验驱动的策略自进化 | *待补* | — | 工具使用型 LLM 交易 agent，每天从自身交易经验重写 policy（policy self-evolution，逐 refinement） | 策略自进化 · policy 重写 · 工具使用 · 交易经验 | [arXiv:2609.17632](https://arxiv.org/abs/2609.17632) | *待补* |
 | 09 | SHARP：自进化、可审计的规则策略 | *待补* | — | 神经符号框架，策略 = 人类可读条件-动作规则；归因 agent 定位失效规则，做原子化编辑 | 策略自进化 · 神经符号 · rubric policy · 规则归因 · 原子编辑 | [arXiv:2605.06822](https://arxiv.org/abs/2605.06822) | *待补* |
 | 10 | AlgoEvolve：交易程序的元进化 | *待补* | — | LLM 进化框架，生成/评估/迭代可执行 Python 交易策略，涌现 regime-adaptive 规则自主切换 | 策略自进化 · 程序进化 · 严格测试 · regime-adaptive | [arXiv:2606.26173](https://arxiv.org/abs/2606.26173) | *待补* |
-| 11 | Recursive Multi-Agent：递归组合策略 | *待补* | — | 地缘不确定性下多 agent 迭代优化 portfolio，RL 目标含风险/回撤惩罚（R=r−0.8σ−1.5·DD） | 策略自进化 · 多 agent · 组合 · 风险感知 RL · 回撤控制 | [arXiv:2605.25311](https://arxiv.org/abs/2605.25311) | *待补* |
+| 11 | Recursive Multi-Agent：递归组合策略 | *待补* | — | 地缘不确定性下 4 专家 agent + Manager 迭代优化 portfolio；健康分递归加权、三触发熔断（回撤/GRS/波动）、约束均值-方差。论文用 RL 语汇并定义风险感知 reward（Eq.9，λ₁=0.8、λ₂=1.5），但**未给出梯度训练过程**（无 policy network / actor-critic / 参数更新），DQN 仅作对照 baseline；多智能体层在再平衡周期内不更新，作用是仲裁权重分歧 | 策略自进化 · 多 agent · 组合 · 回撤控制 · 约束 MVO · 风险感知 reward | [arXiv:2605.25311](https://arxiv.org/abs/2605.25311) | *待补* |
 
 > 08–11 目前仅有 PDF，`notes / thoughts / deep_reading` 待补。
 
