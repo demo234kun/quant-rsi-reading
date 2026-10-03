@@ -1,0 +1,58 @@
+{
+  "dataset": "csi300_small",
+  "run_name": "rolling_csi300_small_w3",
+  "n_symbols": 15,
+  "n_dates_total": 420,
+  "n_windows": 3,
+  "n_methods": 2,
+  "test_size": 40,
+  "val_size": 20,
+  "min_train_size": 252,
+  "expanding_train": true,
+  "train_size": null,
+  "horizon": 5,
+  "windows": [
+    {
+      "index": 0,
+      "n_train": 280,
+      "n_val": 20,
+      "n_test": 40,
+      "train_start": "2023-04-11",
+      "train_end": "2024-06-06",
+      "val_start": "2024-06-07",
+      "val_end": "2024-07-05",
+      "test_start": "2024-07-08",
+      "test_end": "2024-08-30"
+    },
+    {
+      "index": 1,
+      "n_train": 320,
+      "n_val": 20,
+      "n_test": 40,
+      "train_start": "2023-04-11",
+      "train_end": "2024-08-02",
+      "val_start": "2024-08-05",
+      "val_end": "2024-08-30",
+      "test_start": "2024-09-02",
+      "test_end": "2024-11-05"
+    },
+    {
+      "index": 2,
+      "n_train": 360,
+      "n_val": 20,
+      "n_test": 40,
+      "train_start": "2023-04-11",
+      "train_end": "2024-10-08",
+      "val_start": "2024-10-09",
+      "val_end": "2024-11-05",
+      "test_start": "2024-11-06",
+      "test_end": "2024-12-31"
+    }
+  ],
+  "daily_net_returns": "daily_net_returns.csv",
+  "total_test_days": 120,
+  "methods": [
+    "low_vol_20",
+    "momentum_20"
+  ]
+}

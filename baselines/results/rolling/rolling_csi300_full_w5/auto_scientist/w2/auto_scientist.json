@@ -1,0 +1,21 @@
+{
+  "method": "auto_scientist",
+  "category": "factor_evolution",
+  "paper_id": "06",
+  "dataset": "rolling_csi300_full_w5_w2",
+  "n_test_days": 100,
+  "n_symbols": 49,
+  "horizon": 5,
+  "direction": -1,
+  "mean_ic": 0.05410307544827923,
+  "ic_ir": 0.25166811717863974,
+  "mean_rank_ic": 0.049339443703229575,
+  "rank_ic_ir": 0.21776348480259805,
+  "long_short_ann_return": -0.3540710338245422,
+  "long_short_sharpe": -1.663607272811818,
+  "max_drawdown": -0.1618218254080345,
+  "turnover": 1.7860000000000003,
+  "cost_bps": 2.0,
+  "fidelity": "llm_replaced_by_rule",
+  "notes": "预算搜索 controller 与共享 memory 忠实；LLM 用规则变异替代"
+}

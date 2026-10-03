@@ -1,0 +1,21 @@
+{
+  "method": "astar",
+  "category": "factor_evolution",
+  "paper_id": "03",
+  "dataset": "rolling_csi300_full_w5_w1",
+  "n_test_days": 100,
+  "n_symbols": 49,
+  "horizon": 5,
+  "direction": 1,
+  "mean_ic": 0.053613622962589924,
+  "ic_ir": 0.222812204601717,
+  "mean_rank_ic": 0.05373879874209574,
+  "rank_ic_ir": 0.24471231536164473,
+  "long_short_ann_return": 0.331417211466235,
+  "long_short_sharpe": 1.562935171472263,
+  "max_drawdown": -0.11903151008849848,
+  "turnover": 0.8860000000000001,
+  "cost_bps": 2.0,
+  "fidelity": "llm_replaced_by_rule",
+  "notes": "方向提案驱动的递归进化机制忠实；8B 提案模型/GRPO/广告场景未复现"
+}

@@ -1,0 +1,21 @@
+{
+  "method": "rd_agent_quant",
+  "category": "data_evolution",
+  "paper_id": "12",
+  "dataset": "rolling_csi300_full_w5_w4",
+  "n_test_days": 100,
+  "n_symbols": 49,
+  "horizon": 5,
+  "direction": -1,
+  "mean_ic": -0.02274774168317181,
+  "ic_ir": -0.12376384736744886,
+  "mean_rank_ic": -0.016708205913807252,
+  "rank_ic_ir": -0.09656608878479352,
+  "long_short_ann_return": -0.11469573997371624,
+  "long_short_sharpe": -0.6232304831321354,
+  "max_drawdown": -0.15785782544341573,
+  "turnover": 0.696,
+  "cost_bps": 2.0,
+  "fidelity": "llm_replaced_by_rule",
+  "notes": "因子-模型联合优化、UCB 多臂调度忠实；factor 结构变异用规则替代 LLM"
+}

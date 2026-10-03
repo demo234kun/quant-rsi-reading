@@ -1,0 +1,21 @@
+{
+  "method": "aqua",
+  "category": "factor_evolution",
+  "paper_id": "01",
+  "dataset": "rolling_csi300_full_w5_w2",
+  "n_test_days": 100,
+  "n_symbols": 49,
+  "horizon": 5,
+  "direction": 1,
+  "mean_ic": 0.03232239363862572,
+  "ic_ir": 0.1411997087856097,
+  "mean_rank_ic": 0.03623329696805324,
+  "rank_ic_ir": 0.15654796254027178,
+  "long_short_ann_return": 0.23116179539993104,
+  "long_short_sharpe": 1.4364153571135447,
+  "max_drawdown": -0.0975333383287346,
+  "turnover": 0.218,
+  "cost_bps": 2.0,
+  "fidelity": "llm_replaced_by_rule",
+  "notes": "密封沙箱、append-only 证据库、递归进化、因子组合忠实；LLM 用规则变异替代"
+}

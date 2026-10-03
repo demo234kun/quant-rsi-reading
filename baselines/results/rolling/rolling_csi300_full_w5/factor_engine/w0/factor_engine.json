@@ -1,0 +1,21 @@
+{
+  "method": "factor_engine",
+  "category": "data_evolution",
+  "paper_id": "14",
+  "dataset": "rolling_csi300_full_w5_w0",
+  "n_test_days": 100,
+  "n_symbols": 49,
+  "horizon": 5,
+  "direction": -1,
+  "mean_ic": -0.017072781256978437,
+  "ic_ir": -0.06768963797426025,
+  "mean_rank_ic": 0.004147771115488803,
+  "rank_ic_ir": 0.0177116781653078,
+  "long_short_ann_return": 0.027341472369043524,
+  "long_short_sharpe": 0.09055567295963811,
+  "max_drawdown": -0.12356945888357693,
+  "turnover": 0.6739999999999999,
+  "cost_bps": 2.0,
+  "fidelity": "llm_replaced_by_rule",
+  "notes": "逻辑用规则变异替代 LLM；参数本地网格搜索、经验库、三分离机制忠实"
+}

@@ -1,0 +1,73 @@
+{
+  "run_name": "rolling_csi300_small_w3",
+  "dataset": "csi300_small",
+  "n_obs": 120,
+  "n_methods": 2,
+  "n_trials_used_for_dsr": 2,
+  "n_trials_note": "n_trials_used = 实际比较的方法数。未计入超参搜索（如 RMATS 的 ε、λ_MV）与多 fidelity 变体，若真实试验数更大，DSR 会偏乐观。",
+  "n_bootstrap": 2000,
+  "cost_bps_per_side": 2.0,
+  "returns_source": "daily_net_returns.csv（与 MethodMetrics.long_short_sharpe 同源）",
+  "white_reality_check": {
+    "cash": {
+      "pvalue": 0.03398300849575212,
+      "d_star": 0.03301348929195245,
+      "winner": "low_vol_20",
+      "winner_mean_excess_per_period": 0.0030137054645262683,
+      "benchmark": "custom",
+      "n_strategies": 2,
+      "n_obs": 120,
+      "n_bootstrap": 2000,
+      "mean_block": 4.93242414866094
+    },
+    "equal_weight": {
+      "pvalue": 0.02048975512243878,
+      "d_star": 0.02259806969897686,
+      "winner": "low_vol_20",
+      "winner_mean_excess_per_period": 0.0020629120883672676,
+      "benchmark": "equal_weight_mean",
+      "n_strategies": 2,
+      "n_obs": 120,
+      "n_bootstrap": 2000,
+      "mean_block": 4.93242414866094
+    }
+  },
+  "methods": [
+    {
+      "method": "low_vol_20",
+      "n_days": 120,
+      "daily_sr": 0.18735116613329542,
+      "sharpe_annualized": 2.9741075605598777,
+      "dsr": 0.9423002649173061,
+      "dsr_pvalue": 0.05769973508269388,
+      "sr0_expected_max": 0.04744695440772416,
+      "skew": 0.5084310177386994,
+      "kurtosis": 4.983394427839601,
+      "per_window_sharpe_mean": 2.8940533997390183,
+      "per_window_sharpe_std": 1.0820177098489718,
+      "per_window_sharpe_min": 2.2611926728631744,
+      "per_window_sharpe_max": 4.1434241684067965,
+      "per_window_sign_consistency": 1.0,
+      "rolling_sharpe_last": 0.1418155706952508,
+      "rolling_sharpe_mean": 0.18276289288343714
+    },
+    {
+      "method": "momentum_20",
+      "n_days": 120,
+      "daily_sr": -0.05693056805107853,
+      "sharpe_annualized": -0.9037447503647574,
+      "dsr": 0.12753124513467956,
+      "dsr_pvalue": 0.8724687548653205,
+      "sr0_expected_max": 0.04744695440772416,
+      "skew": -0.028870045121641763,
+      "kurtosis": 4.081472269276584,
+      "per_window_sharpe_mean": -0.9292799240078803,
+      "per_window_sharpe_std": 0.8861030680938361,
+      "per_window_sharpe_min": -1.7060587709357236,
+      "per_window_sharpe_max": 0.03585867761704848,
+      "per_window_sign_consistency": 0.6666666666666666,
+      "rolling_sharpe_last": -0.1984536528573996,
+      "rolling_sharpe_mean": -0.08052382912305318
+    }
+  ]
+}

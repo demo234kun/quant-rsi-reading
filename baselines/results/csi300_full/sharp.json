@@ -1,0 +1,21 @@
+{
+  "method": "sharp",
+  "category": "strategy_evolution",
+  "paper_id": "09",
+  "dataset": "csi300_full",
+  "n_test_days": 291,
+  "n_symbols": 49,
+  "horizon": 5,
+  "direction": -1,
+  "mean_ic": 0.009771151380345733,
+  "ic_ir": 0.04596721295452677,
+  "mean_rank_ic": 0.010688122941289825,
+  "rank_ic_ir": 0.0467069965822087,
+  "long_short_ann_return": -0.22521063991356588,
+  "long_short_sharpe": -1.0969728914395742,
+  "max_drawdown": -0.3600114882381778,
+  "turnover": 1.0714776632302405,
+  "cost_bps": 2.0,
+  "fidelity": "paper_ablation_added",
+  "notes": "版本化 rubric(id,cat,cond,act)、K_attr=20 最差日联合 LLM 归因(freq>=3)、<=3 原子编辑(ADD/改阈值/改权重/REMOVE)、有符号验证门 e_j>=e*-0.005 与回滚/best-tracking、冻结最优 rubric 均忠实实现；A1 去归因消融由 use_attribution 开关复现。论文新闻/VIX/5分钟/美股用价格代理：temporal_priced_in→|5日涨跌幅|>3%，macro_high_vix→20日年化波动率>25%，4 条纯新闻规则删除；LLM analyst(新闻→r̂,c)用价格特征确定性映射替代；e(·) 取 val 组合净收益累计和（论文未定义）。"
+}

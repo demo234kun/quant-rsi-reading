@@ -1,0 +1,21 @@
+{
+  "method": "quant_evolver",
+  "category": "factor_evolution",
+  "paper_id": "07",
+  "dataset": "csi300_full",
+  "n_test_days": 291,
+  "n_symbols": 49,
+  "horizon": 5,
+  "direction": 1,
+  "mean_ic": 0.05267170718645331,
+  "ic_ir": 0.2142519342320284,
+  "mean_rank_ic": 0.06394404833484009,
+  "rank_ic_ir": 0.2641802778174626,
+  "long_short_ann_return": 0.23153231568438723,
+  "long_short_sharpe": 1.2110353646524552,
+  "max_drawdown": -0.17033482571824948,
+  "turnover": 0.6982817869415807,
+  "cost_bps": 2.0,
+  "fidelity": "weight_rft_omitted",
+  "notes": "因子 DSL、regime backtest、D-C 选择忠实；LoRA/RFT 权重更新未复现"
+}

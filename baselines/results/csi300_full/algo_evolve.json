@@ -1,0 +1,21 @@
+{
+  "method": "algo_evolve",
+  "category": "strategy_evolution",
+  "paper_id": "10",
+  "dataset": "csi300_full",
+  "n_test_days": 291,
+  "n_symbols": 49,
+  "horizon": 5,
+  "direction": 1,
+  "mean_ic": 0.0017189103711381893,
+  "ic_ir": 0.009323160222414523,
+  "mean_rank_ic": -0.011283487796415477,
+  "rank_ic_ir": -0.05496332983017784,
+  "long_short_ann_return": -0.08745695707123423,
+  "long_short_sharpe": -0.526763668015315,
+  "max_drawdown": -0.2177269561895316,
+  "turnover": 0.9628865979381445,
+  "cost_bps": 2.0,
+  "fidelity": "simplified",
+  "notes": "外层机制忠实复现：4 基因 Prompt Genome、build_prompt、K=6 元代、精英保留、prompt 空间均匀交叉、Performance Report 驱动的单基因 informed meta-mutation、外层适应度=内层冠军在 held-out walk-forward 窗上的 S、非法候选 −∞。内层替换：论文用 LLM 对任意 Python 程序做语义 CoT 变异，本复现改用自建的受限 DSL 程序空间——保留『进化可执行程序』，丢失『语义变异』。候选目录/build_prompt 模板/内层代数与种群/外层种群/walk-forward epoch 边界均为论文未给定项，由本复现自定。未复现：5 分钟 K 线与 NUMIN（改日频）、regime 检测（论文未定义）、多重检验校正。"
+}

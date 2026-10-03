@@ -1,0 +1,21 @@
+{
+  "method": "trading_group",
+  "category": "data_evolution",
+  "paper_id": "13",
+  "dataset": "rolling_csi300_full_w5_w2",
+  "n_test_days": 100,
+  "n_symbols": 49,
+  "horizon": 5,
+  "direction": 1,
+  "mean_ic": -0.02135720631763677,
+  "ic_ir": -0.10249615560703453,
+  "mean_rank_ic": -0.019260313082891688,
+  "rank_ic_ir": -0.09280275039863346,
+  "long_short_ann_return": -0.24088757860600196,
+  "long_short_sharpe": -1.3812061175144292,
+  "max_drawdown": -0.1308403302926209,
+  "turnover": 1.276,
+  "cost_bps": 2.0,
+  "fidelity": "simplified",
+  "notes": "数据合成（block bootstrap+加噪）与反思机制忠实；新闻/财报/风格等需 LLM 的智能体未复现"
+}

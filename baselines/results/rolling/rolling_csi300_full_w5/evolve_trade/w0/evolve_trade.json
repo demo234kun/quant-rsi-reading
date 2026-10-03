@@ -1,0 +1,21 @@
+{
+  "method": "evolve_trade",
+  "category": "strategy_evolution",
+  "paper_id": "08",
+  "dataset": "rolling_csi300_full_w5_w0",
+  "n_test_days": 100,
+  "n_symbols": 49,
+  "horizon": 5,
+  "direction": 1,
+  "mean_ic": 0.019292220574796567,
+  "ic_ir": 0.06834984087768359,
+  "mean_rank_ic": -0.02671281728426307,
+  "rank_ic_ir": -0.11853103267282036,
+  "long_short_ann_return": -0.005147209680221806,
+  "long_short_sharpe": -0.019783948970740588,
+  "max_drawdown": -0.1031480244862594,
+  "turnover": 0.93,
+  "cost_bps": 2.0,
+  "fidelity": "paper_ablation_added",
+  "notes": "policy 文本演化闭环 + 决策轨迹 + 轨迹消融忠实；交易执行用确定性解释器替代 live 工具调用智能体；论文新闻/代码工具换成 6 个价格指标；N=5 改为 6 轮以控 LLM 预算"
+}
