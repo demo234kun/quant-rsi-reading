@@ -8,6 +8,12 @@ __pycache__/
 # 数据缓存（可由 project/scripts 重新下载生成）
 *.parquet
 
+# LLM 响应缓存（重跑复用，避免重复付费；删掉即可重新生成）
+baselines/cache/llm/
+
+# opencode agent 状态（本地工具产物，非项目内容）
+.omo/
+
 # 第三方框架完整代码与压缩包（仅保留复现记录，原仓库见记录链接）
 reproduction/*.zip
 reproduction/*-main/
