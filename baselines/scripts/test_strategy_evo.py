@@ -13,7 +13,7 @@ ds = make_dataset(name="csi300_small", n_symbols=15, n_days=420, horizon=5)
 
 for cls in [EvolveTrade, SHARP, AlgoEvolve, RecursiveMultiAgent]:
     m = cls()
-    met = m.run(ds)
+    met, _net = m.run(ds)
     save_metrics(met, RESULTS, ds.name)
     print(f"[{m.name:22s}] IC={met.mean_ic:+.4f} RankIC={met.mean_rank_ic:+.4f} "
           f"Sharpe={met.long_short_sharpe:+.2f}")

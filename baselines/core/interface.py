@@ -60,8 +60,12 @@ class BaselineMethod(ABC):
     def produce_signal(self, ds: Dataset, split: str = "test") -> pd.Series:
         """产出指定 split 的信号，MultiIndex (date, symbol)。"""
 
-    def run(self, ds: Dataset) -> MethodMetrics:
-        """模板：fit -> 在 test 产出信号 -> 统一评估。"""
+    def run(self, ds: Dataset) -> tuple[MethodMetrics, pd.Series]:
+        """模板：fit -> 在 test 产出信号 -> 统一评估。
+
+        返回 (MethodMetrics, 日净收益 Series)。日净收益与 metrics 里的 Sharpe 同源，
+        供滚动窗口 / DSR / White RC 复用，避免二次回测导致口径不一致。
+        """
         from .evaluator import evaluate_signal
         self.fit(ds)
         signal = self.produce_signal(ds, split="test")

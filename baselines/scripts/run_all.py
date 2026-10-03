@@ -59,7 +59,7 @@ def main():
                           n_days=args.n_days, horizon=5)
 
     for m in build_methods():
-        met = m.run(ds)
+        met, _net = m.run(ds)
         save_metrics(met, RESULTS, ds.name)
         print(f"[{m.name:22s}] IC={met.mean_ic:+.4f} RankIC={met.mean_rank_ic:+.4f} "
               f"Sharpe={met.long_short_sharpe:+.2f} [{m.fidelity}]")

@@ -92,7 +92,15 @@ def long_short_backtest(
     return net, float(turnover.mean()), Wf
 
 
-def evaluate_signal(method: BaselineMethod, ds: Dataset, test_signal: pd.Series) -> MethodMetrics:
+def evaluate_signal(
+    method: BaselineMethod, ds: Dataset, test_signal: pd.Series
+) -> tuple[MethodMetrics, pd.Series]:
+    """返回 (MethodMetrics, 日净收益 Series)。
+
+    日净收益与 MethodMetrics.long_short_sharpe **同源**（同一 net 序列、同一方向、
+    同一成本口径），因此可直接喂给 `core.stats` 做 DSR / White RC，
+    不会出现"表格里的 Sharpe"和"统计检验用的 Sharpe"对不上的问题。
+    """
     val_signal = method.produce_signal(ds, split="validation")
     direction = estimate_direction(val_signal, ds.fwd_ret_on("validation"))
 
@@ -115,7 +123,7 @@ def evaluate_signal(method: BaselineMethod, ds: Dataset, test_signal: pd.Series)
     else:
         ann_ret = sharpe = max_dd = float("nan")
 
-    return MethodMetrics(
+    metrics = MethodMetrics(
         method=method.name, category=method.category, paper_id=method.paper_id,
         dataset=ds.name, n_test_days=int(len(net)),
         n_symbols=int(ds.symbols.nunique()), horizon=ds.horizon,
@@ -125,3 +133,4 @@ def evaluate_signal(method: BaselineMethod, ds: Dataset, test_signal: pd.Series)
         max_drawdown=max_dd, turnover=turnover, cost_bps=2.0,
         fidelity=method.fidelity, notes=method.notes,
     )
+    return metrics, net
