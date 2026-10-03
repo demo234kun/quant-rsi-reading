@@ -122,3 +122,59 @@ def make_dataset(
         name=name, panel=panel, fwd_ret=fwd, next_ret=nxt, horizon=horizon,
         train_dates=train_dates, val_dates=val_dates, test_dates=test_dates,
     )
+
+
+def window_view(ds: Dataset, name: str, train_dates, val_dates, test_dates) -> Dataset:
+    """把已有 Dataset 重新切成另一个时间窗，**复用同一份 panel 与已算好的收益**。
+
+    滚动窗口必须这样做：panel 与 fwd/next_ret 只依赖 horizon，与切分无关，
+    每个窗口重新 load parquet + 重新算 shift 是纯浪费。
+    """
+    return Dataset(
+        name=name,
+        panel=ds.panel,
+        fwd_ret=ds.fwd_ret,
+        next_ret=ds.next_ret,
+        horizon=ds.horizon,
+        train_dates=pd.DatetimeIndex(train_dates),
+        val_dates=pd.DatetimeIndex(val_dates),
+        test_dates=pd.DatetimeIndex(test_dates),
+    )
+
+
+def rolling_window_splits(
+    dates: pd.DatetimeIndex,
+    n_windows: int,
+    test_size: int,
+    val_size: int,
+    min_train_size: int,
+    expanding: bool = True,
+    train_size: int | None = None,
+) -> list[tuple[pd.DatetimeIndex, pd.DatetimeIndex, pd.DatetimeIndex]]:
+    """生成最近 n_windows 个滚动切分（test 段互不重叠），从旧到新返回。
+
+    每个窗口 test 不重叠、且都以样本末尾收尾，这样能覆盖到最新行情；
+    train 默认 expanding（用尽所有历史），也可设 expanding=False + train_size 得到滑窗。
+    """
+    n = len(dates)
+    first_test_start = min_train_size + val_size
+    out: list[tuple[pd.DatetimeIndex, pd.DatetimeIndex, pd.DatetimeIndex]] = []
+    t1 = n
+    while len(out) < n_windows:
+        t0 = t1 - test_size
+        if t0 < first_test_start:
+            break
+        v1, v0 = t0, t0 - val_size
+        # train 永远紧贴 val 之前结束（v0）。expanding 从样本最早开始；
+        # 滑窗则只取 train_size 天。**必须用切片而非 dates[:tr_end]，
+        # 后者把 tr_end 当结束下标，train 长度会等于 tr_end 而非 train_size
+        # （滑窗会静默退化成 expanding）。
+        if expanding:
+            tr = dates[:v0]
+        else:
+            width = train_size if train_size else v0
+            tr = dates[max(0, v0 - width):v0]
+        out.append((tr, dates[v0:v1], dates[t0:t1]))
+        t1 = t0
+    out.reverse()
+    return out
