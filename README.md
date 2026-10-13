@@ -24,6 +24,7 @@
 | [AutoScientist-Quant：把量化研究当预算搜索](papers/factor_evolution/06_AutoScientist-Quant/notes.md) | [📖](papers/factor_evolution/06_AutoScientist-Quant/deep_reading.md) | [❓](papers/factor_evolution/06_AutoScientist-Quant/questions.md) | — | Zongqian Li 等（含 Google DeepMind 背景） | 和 AQuA 同期对手；单一 controller 根据剩余预算统一调度从假设到 deployable strategy 的全流程 | [✏️](papers/factor_evolution/06_AutoScientist-Quant/thoughts.md) |
 | [QuantEvolver：把反馈从 prompt 搬进权重](papers/factor_evolution/07_QuantEvolver/notes.md) | [📖](papers/factor_evolution/07_QuantEvolver/deep_reading.md) | [❓](papers/factor_evolution/07_QuantEvolver/questions.md) | — | Lingzhe Zhang 等（Philip S. Yu 团队） | RFT 替代 prompt-loop；把可执行回测评估转成 Miner LLM 参数更新，Diversity-Complementarity Reward 抗趋同 | [✏️](papers/factor_evolution/07_QuantEvolver/thoughts.md) |
 | [Beyond Prompting：自主因子投资框架](papers/factor_evolution/17_BeyondPrompting/notes.md) | [📖](papers/factor_evolution/17_BeyondPrompting/deep_reading.md) | [❓](papers/factor_evolution/17_BeyondPrompting/questions.md) | — | Allen Yikuan Huang, Zheqi Fan | 不依赖手动 prompt，把模型作为自驱动引擎内生生成可解释交易信号；严格样本外验证 + 经济逻辑要求防过拟合；美股多空组合 Sharpe 3.11、年化收益 59.53% | [✏️](papers/factor_evolution/17_BeyondPrompting/thoughts.md) |
+| [XALPHA：记忆驱动的 AI 量化研究员](papers/factor_evolution/16_XALPHA/notes.md) | [📖](papers/factor_evolution/16_XALPHA/deep_reading.md) | [❓](papers/factor_evolution/16_XALPHA/questions.md) | [🔗](https://mp.weixin.qq.com/s/iwuaa75L3XTFSMGFV2nTUw) | Ziwei Li 等 | 多源研究记忆系统整合研报知识 + 历史发现反馈；Macro Brain 规划研究主题选 Archetype，Micro Brain 把假设转成可执行因子代码并做事前三方对齐 | [✏️](papers/factor_evolution/16_XALPHA/thoughts.md) |
 
 ---
 
@@ -57,7 +58,6 @@
 
 | 文章 | 结构阅读 | 问题阅读 | 微信原文 | 作者来源 | 概括 | 个人笔记 |
 |------|---------|---------|----------|----------|------|----------|
-| [XALPHA：记忆驱动的 AI 量化研究员](papers/expert_knowledge/16_XALPHA/notes.md) | [📖](papers/expert_knowledge/16_XALPHA/deep_reading.md) | [❓](papers/expert_knowledge/16_XALPHA/questions.md) | [🔗](https://mp.weixin.qq.com/s/iwuaa75L3XTFSMGFV2nTUw) | Ziwei Li 等 | 多源研究记忆系统整合研报知识 + 历史发现反馈；Macro Brain 规划研究主题选 Archetype，Micro Brain 把假设转成可执行因子代码并做事前三方对齐 | [✏️](papers/expert_knowledge/16_XALPHA/thoughts.md) |
 | [KISS：科学仿真的知识基础设施](papers/expert_knowledge/18_KISS/notes.md) | [📖](papers/expert_knowledge/18_KISS/deep_reading.md) | [❓](papers/expert_knowledge/18_KISS/questions.md) | — | Ziwei Li, Liujun Zhu, Yuchen Liu 等 | 把专家经验外化为可验证建模算子 + 分阶段领域协议 + 诊断恢复机制；3000 次试验中带 KI 的 agent 端到端仿真成功率达 84%（无 KI <40%）；KDT 工具包自动生成 14 个地球科学领域 117 个模型的 KI。[代码](https://github.com/lzwei196/knowledge_dissection_toolkit) ｜ [平台](https://app.hydrocraft.ai) | [✏️](papers/expert_knowledge/18_KISS/thoughts.md) |
 | [微信文章](papers/expert_knowledge/19_WeChat_MM/notes.md) | [📖](papers/expert_knowledge/19_WeChat_MM/deep_reading.md) | [❓](papers/expert_knowledge/19_WeChat_MM/questions.md) | [🔗](https://mp.weixin.qq.com/s/_EB4CsN1uCNpcvbzKzz_lA) | 微信公众号 | 待阅读后补充概括 | [✏️](papers/expert_knowledge/19_WeChat_MM/thoughts.md) |
 | [微信文章](papers/expert_knowledge/20_WeChat_IuK/notes.md) | [📖](papers/expert_knowledge/20_WeChat_IuK/deep_reading.md) | [❓](papers/expert_knowledge/20_WeChat_IuK/questions.md) | [🔗](https://mp.weixin.qq.com/s/IuK1-0JGr43E9q1Eyf-PUQ) | 微信公众号 | 待阅读后补充概括 | [✏️](papers/expert_knowledge/20_WeChat_IuK/thoughts.md) |
@@ -81,6 +81,7 @@ quant_library/
     │   ├── 03_Astar/       (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 06_AutoScientist-Quant/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 07_QuantEvolver/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   ├── 16_XALPHA/      (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   └── 17_BeyondPrompting/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     ├── strategy_evolution/
     │   ├── 08_EvolveTrade/          (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
@@ -89,7 +90,6 @@ quant_library/
     │   ├── 11_RecursiveMultiAgent/  (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   └── 15_F2Agent/              (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     ├── expert_knowledge/
-    │   ├── 16_XALPHA/      (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 18_KISS/        (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 19_WeChat_MM/   (notes.md, questions.md, thoughts.md, deep_reading.md)
     │   └── 20_WeChat_IuK/  (notes.md, questions.md, thoughts.md, deep_reading.md)
