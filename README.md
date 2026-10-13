@@ -34,8 +34,9 @@
 | [SHARP：自进化、可审计的规则策略](papers/strategy_evolution/09_SHARP/notes.md) | [📖](papers/strategy_evolution/09_SHARP/deep_reading.md) | [❓](papers/strategy_evolution/09_SHARP/questions.md) | — | Xiwen Chen, Wenhui Zhu, Songzhu Zheng, Kashif Rasul（Morgan Stanley / ASU） | 神经符号框架，策略 = 人类可读条件-动作规则；归因 agent 定位失效规则，做原子化编辑 | [✏️](papers/strategy_evolution/09_SHARP/thoughts.md) |
 | [AlgoEvolve：交易程序的元进化](papers/strategy_evolution/10_AlgoEvolve/notes.md) | [📖](papers/strategy_evolution/10_AlgoEvolve/deep_reading.md) | [❓](papers/strategy_evolution/10_AlgoEvolve/questions.md) | — | Dhruv Sharma, Gautam Shroff（IIIT Delhi） | LLM 进化框架，生成/评估/迭代可执行 Python 交易策略，涌现 regime-adaptive 规则自主切换 | [✏️](papers/strategy_evolution/10_AlgoEvolve/thoughts.md) |
 | [Recursive Multi-Agent：递归组合策略](papers/strategy_evolution/11_RecursiveMultiAgent/notes.md) | [📖](papers/strategy_evolution/11_RecursiveMultiAgent/deep_reading.md) | [❓](papers/strategy_evolution/11_RecursiveMultiAgent/questions.md) | — | Jing Yang, Penghao Liang, Yichao Wu 等（Northeastern University） | 地缘不确定性下 4 专家 agent + Manager 迭代优化 portfolio；健康分递归加权、三触发熔断（回撤/GRS/波动）、约束均值-方差。论文用 RL 语汇并定义风险感知 reward（Eq.9，λ₁=0.8、λ₂=1.5），但**未给出梯度训练过程**（无 policy network / actor-critic / 参数更新），DQN 仅作对照 baseline；多智能体层在再平衡周期内不更新，作用是仲裁权重分歧 | [✏️](papers/strategy_evolution/11_RecursiveMultiAgent/thoughts.md) |
+| [F²Agent：多模态金融交易智能体融合](papers/strategy_evolution/15_F2Agent/notes.md) | [📖](papers/strategy_evolution/15_F2Agent/deep_reading.md) | [❓](papers/strategy_evolution/15_F2Agent/questions.md) | — | Changshuo Liu, Yanzheng Jin, Shangfeng Cai 等（NUS） | 多模态智能体交易框架：分层专用 agent 提取模态信号 + 模态感知自适应融合 + 噪声鲁棒一致性正则化；跑赢 16 个基线，年化收益平均提升 20%+，GOOG 120.48%、TSLA 148.41% | [✏️](papers/strategy_evolution/15_F2Agent/thoughts.md) |
 
-> 08–11 已有 PDF 与空白 md 骨架，内容待填充。
+> 08–11、15 已有 PDF 与空白 md 骨架，内容待填充。
 
 ---
 
@@ -70,7 +71,8 @@ quant_library/
     │   ├── 08_EvolveTrade/          (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 09_SHARP/                (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 10_AlgoEvolve/           (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
-    │   └── 11_RecursiveMultiAgent/  (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   ├── 11_RecursiveMultiAgent/  (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   └── 15_F2Agent/              (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     └── other/
         ├── 02_AutoResearch_Industry/ (wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
         ├── 04_Dream-RSI/    (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
@@ -125,7 +127,8 @@ quant_library/
 11. **R&D-Agent-Quant**: arXiv:2505.15155, 2025（NeurIPS 2025）. https://arxiv.org/abs/2505.15155
 12. **TradingGroup**: arXiv:2508.17565, 2025. https://arxiv.org/abs/2508.17565
 13. **FactorEngine**: arXiv:2603.16365, 2026. https://arxiv.org/abs/2603.16365
-14. **MarkTechPost 对 AQuA 的报道**: https://www.marktechpost.com/2026/09/01/aqua-a-two-part-agentic-framework-for-autonomous-factor-discovery/
+14. **F²Agent**: Changshuo Liu, Yanzheng Jin, Shangfeng Cai, Peng Fang, Xiaokui Xiao, Beng Chin Ooi. *F²Agent: Financial Fusion of Agentic Intelligence for Multimodal Trading*. arXiv:2608.05668, 2026. https://arxiv.org/abs/2608.05668
+15. **MarkTechPost 对 AQuA 的报道**: https://www.marktechpost.com/2026/09/01/aqua-a-two-part-agentic-framework-for-autonomous-factor-discovery/
 
 ### 微信解读原文
 
