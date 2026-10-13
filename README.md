@@ -23,7 +23,7 @@
 | [Astar：8B 模型在生产环境跑 RSI](papers/factor_evolution/03_Astar/notes.md) | [📖](papers/factor_evolution/03_Astar/deep_reading.md) | [❓](papers/factor_evolution/03_Astar/questions.md) | [🔗](https://mp.weixin.qq.com/s/Eb6vKO6fvefasBvc-JJ9dQ) | 阿里 × 浙江大学 | 一个 8B 专用模型只会一件事——提出 AI 系统下一步演化方向；Lazada 广告召回无人值守 20 轮，GMV +4.86% | [✏️](papers/factor_evolution/03_Astar/thoughts.md) |
 | [AutoScientist-Quant：把量化研究当预算搜索](papers/factor_evolution/06_AutoScientist-Quant/notes.md) | [📖](papers/factor_evolution/06_AutoScientist-Quant/deep_reading.md) | [❓](papers/factor_evolution/06_AutoScientist-Quant/questions.md) | — | Zongqian Li 等（含 Google DeepMind 背景） | 和 AQuA 同期对手；单一 controller 根据剩余预算统一调度从假设到 deployable strategy 的全流程 | [✏️](papers/factor_evolution/06_AutoScientist-Quant/thoughts.md) |
 | [QuantEvolver：把反馈从 prompt 搬进权重](papers/factor_evolution/07_QuantEvolver/notes.md) | [📖](papers/factor_evolution/07_QuantEvolver/deep_reading.md) | [❓](papers/factor_evolution/07_QuantEvolver/questions.md) | — | Lingzhe Zhang 等（Philip S. Yu 团队） | RFT 替代 prompt-loop；把可执行回测评估转成 Miner LLM 参数更新，Diversity-Complementarity Reward 抗趋同 | [✏️](papers/factor_evolution/07_QuantEvolver/thoughts.md) |
-| [Beyond Prompting：自主因子投资框架](papers/factor_evolution/17_BeyondPrompting/notes.md) | [📖](papers/factor_evolution/17_BeyondPrompting/deep_reading.md) | [❓](papers/factor_evolution/17_BeyondPrompting/questions.md) | — | Allen Yikuan Huang, Zheqi Fan | 不依赖手动 prompt，把模型作为自驱动引擎内生生成可解释交易信号；严格样本外验证 + 经济逻辑要求防过拟合；美股多空组合 Sharpe 3.11、年化收益 59.53% | [✏️](papers/factor_evolution/17_BeyondPrompting/thoughts.md) |
+| [Beyond Prompting: Autonomous Factor Investing via Agentic AI](papers/factor_evolution/17_BeyondPrompting/notes.md) | [📖](papers/factor_evolution/17_BeyondPrompting/deep_reading.md) | [❓](papers/factor_evolution/17_BeyondPrompting/questions.md) | — | Allen Yikuan Huang, Zheqi Fan | 不依赖手动 prompt，把模型作为自驱动引擎内生生成可解释交易信号；严格样本外验证 + 经济逻辑要求防过拟合；美股多空组合 Sharpe 3.11、年化收益 59.53% | [✏️](papers/factor_evolution/17_BeyondPrompting/thoughts.md) |
 | [XALPHA：记忆驱动的 AI 量化研究员](papers/factor_evolution/16_XALPHA/notes.md) | [📖](papers/factor_evolution/16_XALPHA/deep_reading.md) | [❓](papers/factor_evolution/16_XALPHA/questions.md) | [🔗](https://mp.weixin.qq.com/s/iwuaa75L3XTFSMGFV2nTUw) | Ziwei Li 等 | 多源研究记忆系统整合研报知识 + 历史发现反馈；Macro Brain 规划研究主题选 Archetype，Micro Brain 把假设转成可执行因子代码并做事前三方对齐 | [✏️](papers/factor_evolution/16_XALPHA/thoughts.md) |
 
 ---
@@ -49,6 +49,7 @@
 | [AutoResearch 行业深度调查](papers/other/02_AutoResearch_Industry/notes.md) | [📖](papers/other/02_AutoResearch_Industry/deep_reading.md) | [❓](papers/other/02_AutoResearch_Industry/questions.md) | [🔗](https://mp.weixin.qq.com/s/z0B8QFnsfrPQ3y6JVhQv-A) | 公众号深度调查（汇编公开来源） | 从 Jane Street 150 亿美元七月说起，把 AI 自动量化追到桥水/Man/Citadel/幻方的真实部署与事故账单 | [✏️](papers/other/02_AutoResearch_Industry/thoughts.md) |
 | [Dream-RSI：在历史发现树上做梦](papers/other/04_Dream-RSI/notes.md) | [📖](papers/other/04_Dream-RSI/deep_reading.md) | [❓](papers/other/04_Dream-RSI/questions.md) | [🔗](https://mp.weixin.qq.com/s/NwO-gQl96t_gumJhPs2kEA) | Google 系团队 | 不重训模型，让"找知识的方法"在历史发现树上做梦进化；元层自改进，执行层一行不改 | [✏️](papers/other/04_Dream-RSI/thoughts.md) |
 | [RSI 三根缰绳：全局框架](papers/other/05_RSI_ThreeReins/notes.md) | [📖](papers/other/05_RSI_ThreeReins/deep_reading.md) | [❓](papers/other/05_RSI_ThreeReins/questions.md) | [🔗](https://mp.weixin.qq.com/s/wf1KOGRfXpefa0vtw8OdMw) | 公众号综述（自建框架） | 把整个 RSI 领域压成最小回路 + 三根缰绳：裁判在哪环内、燃料从哪来、改进多少传回改进者 | [✏️](papers/other/05_RSI_ThreeReins/thoughts.md) |
+| [Darwin Gödel Machine：自我改进 agent 的开放式进化](papers/other/21_DarwinGodelMachine/notes.md) | [📖](papers/other/21_DarwinGodelMachine/deep_reading.md) | [❓](papers/other/21_DarwinGodelMachine/questions.md) | — | Jenny Zhang, Shengran Hu, Cong Lu, Robert Lange, Jeff Clune（UBC / Sakana AI） | 迭代修改自身代码 + 编码基准实证验证；达尔文式进化 archive，从 archive 采样 agent 自修改生成新版本，有趣且有改进的保留为下一代父母。[代码](https://github.com/jennyzzt/dgm) ｜ [项目页](https://sakana.ai/dgm/) | [✏️](papers/other/21_DarwinGodelMachine/thoughts.md) |
 
 ---
 
@@ -96,7 +97,8 @@ quant_library/
     └── other/
         ├── 02_AutoResearch_Industry/ (wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
         ├── 04_Dream-RSI/    (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
-        └── 05_RSI_ThreeReins/ (wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
+        ├── 05_RSI_ThreeReins/ (wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
+        └── 21_DarwinGodelMachine/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
 ```
 
 ---
@@ -151,7 +153,8 @@ quant_library/
 15. **Beyond Prompting**: Allen Yikuan Huang, Zheqi Fan. *Beyond Prompting: An Autonomous Framework for Systematic Factor Investing via Agentic AI*. arXiv:2603.14288, 2026. https://arxiv.org/abs/2603.14288
 16. **XALPHA**: *XALPHA: A Memory-Driven AI Quant Researcher for Hypothesis-to-Code Alpha Discovery*. arXiv:2607.08332, 2026. https://arxiv.org/abs/2607.08332
 17. **KISS**: Ziwei Li, Liujun Zhu, Yuchen Liu, Yichen Zhao, Birk Li, Ruiqi Wu, Junliang Jin, Jianyun Zhang. *KISS: Knowledge Infrastructure for Scientific Simulation*. arXiv:2605.17856, 2026. https://arxiv.org/abs/2605.17856 ｜ 代码: https://github.com/lzwei196/knowledge_dissection_toolkit ｜ 平台: https://app.hydrocraft.ai
-18. **MarkTechPost 对 AQuA 的报道**: https://www.marktechpost.com/2026/09/01/aqua-a-two-part-agentic-framework-for-autonomous-factor-discovery/
+18. **Darwin Gödel Machine**: Jenny Zhang, Shengran Hu, Cong Lu, Robert Lange, Jeff Clune. *Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents*. arXiv:2505.22954, 2025. https://arxiv.org/abs/2505.22954 ｜ 代码: https://github.com/jennyzzt/dgm ｜ 项目页: https://sakana.ai/dgm/
+19. **MarkTechPost 对 AQuA 的报道**: https://www.marktechpost.com/2026/09/01/aqua-a-two-part-agentic-framework-for-autonomous-factor-discovery/
 
 ### 微信解读原文
 
