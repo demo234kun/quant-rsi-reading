@@ -9,9 +9,9 @@
 
 | 文章 | 结构阅读 | 问题阅读 | 作者来源 | 微信原文 | 一句话概括 | 个人笔记 |
 |------|---------|---------|----------|----------|-----------|----------|
-| [R&D-Agent-Quant](papers/data_evolution/12_RD-Agent-Quant/notes.md) | [📖 结构阅读](papers/data_evolution/12_RD-Agent-Quant/deep_reading.md) | | Yuante Li 等（Microsoft） | | 首个 data-centric 多智能体，因子-模型联合优化；Research/Development 闭环 + 多臂老虎机调度，ARR 最高约 2×、因子少 70% | [✏️ 个人笔记](papers/data_evolution/12_RD-Agent-Quant/thoughts.md) |
-| [TradingGroup](papers/data_evolution/13_TradingGroup/notes.md) | [📖 结构阅读](papers/data_evolution/13_TradingGroup/deep_reading.md) | | Feng Tian, Flora D. Salim, Hao Xue | | 多智能体交易系统，自我反思 + 端到端数据合成/标注管线，用交易活动数据反哺后训练；含动态止损/止盈 | [✏️ 个人笔记](papers/data_evolution/13_TradingGroup/thoughts.md) |
-| [FactorEngine](papers/data_evolution/14_FactorEngine/notes.md) | [📖 结构阅读](papers/data_evolution/14_FactorEngine/deep_reading.md) | | Qinhong Lin 等 | | 程序级因子挖掘，因子=图灵完备代码；知识注入把研报转为可执行因子，经验知识库支持从失败学习 | [✏️ 个人笔记](papers/data_evolution/14_FactorEngine/thoughts.md) |
+| [R&D-Agent-Quant](papers/data_evolution/12_RD-Agent-Quant/notes.md) | [📖](papers/data_evolution/12_RD-Agent-Quant/deep_reading.md) | [❓](papers/data_evolution/12_RD-Agent-Quant/questions.md) | Yuante Li 等（Microsoft） | | 首个 data-centric 多智能体，因子-模型联合优化；Research/Development 闭环 + 多臂老虎机调度，ARR 最高约 2×、因子少 70% | [✏️](papers/data_evolution/12_RD-Agent-Quant/thoughts.md) |
+| [TradingGroup](papers/data_evolution/13_TradingGroup/notes.md) | [📖](papers/data_evolution/13_TradingGroup/deep_reading.md) | [❓](papers/data_evolution/13_TradingGroup/questions.md) | Feng Tian, Flora D. Salim, Hao Xue | | 多智能体交易系统，自我反思 + 端到端数据合成/标注管线，用交易活动数据反哺后训练；含动态止损/止盈 | [✏️](papers/data_evolution/13_TradingGroup/thoughts.md) |
+| [FactorEngine](papers/data_evolution/14_FactorEngine/notes.md) | [📖](papers/data_evolution/14_FactorEngine/deep_reading.md) | [❓](papers/data_evolution/14_FactorEngine/questions.md) | Qinhong Lin 等 | | 程序级因子挖掘，因子=图灵完备代码；知识注入把研报转为可执行因子，经验知识库支持从失败学习 | [✏️](papers/data_evolution/14_FactorEngine/thoughts.md) |
 
 ---
 
@@ -19,10 +19,10 @@
 
 | 文章 | 结构阅读 | 问题阅读 | 作者来源 | 微信原文 | 一句话概括 | 个人笔记 |
 |------|---------|---------|----------|----------|-----------|----------|
-| [AQuA：递归自我改进的量化研究 Agent](papers/factor_evolution/01_AQuA/notes.md) | [📖 结构阅读](papers/factor_evolution/01_AQuA/deep_reading.md) | | Jiacheng Guo 等（Princeton / Ant / Stanford） | [微信原文](https://mp.weixin.qq.com/s/MEgyuiGTxyOlxVJ2EnVBzQ) | 两个互不连通的量化研究系统（挖因子 + 调模型），把打分的尺子焊死在 agent 够不到的地方 | [✏️ 个人笔记](papers/factor_evolution/01_AQuA/thoughts.md) |
-| [Astar：8B 模型在生产环境跑 RSI](papers/factor_evolution/03_Astar/notes.md) | [📖 结构阅读](papers/factor_evolution/03_Astar/deep_reading.md) | | 阿里 × 浙江大学 | [微信原文](https://mp.weixin.qq.com/s/Eb6vKO6fvefasBvc-JJ9dQ) | 一个 8B 专用模型只会一件事——提出 AI 系统下一步演化方向；Lazada 广告召回无人值守 20 轮，GMV +4.86% | [✏️ 个人笔记](papers/factor_evolution/03_Astar/thoughts.md) |
-| [AutoScientist-Quant：把量化研究当预算搜索](papers/factor_evolution/06_AutoScientist-Quant/notes.md) | [📖 结构阅读](papers/factor_evolution/06_AutoScientist-Quant/deep_reading.md) | | Zongqian Li 等（含 Google DeepMind 背景） | | 和 AQuA 同期对手；单一 controller 根据剩余预算统一调度从假设到 deployable strategy 的全流程 | [✏️ 个人笔记](papers/factor_evolution/06_AutoScientist-Quant/thoughts.md) |
-| [QuantEvolver：把反馈从 prompt 搬进权重](papers/factor_evolution/07_QuantEvolver/notes.md) | [📖 结构阅读](papers/factor_evolution/07_QuantEvolver/deep_reading.md) | | Lingzhe Zhang 等（Philip S. Yu 团队） | | RFT 替代 prompt-loop；把可执行回测评估转成 Miner LLM 参数更新，Diversity-Complementarity Reward 抗趋同 | [✏️ 个人笔记](papers/factor_evolution/07_QuantEvolver/thoughts.md) |
+| [AQuA：递归自我改进的量化研究 Agent](papers/factor_evolution/01_AQuA/notes.md) | [📖](papers/factor_evolution/01_AQuA/deep_reading.md) | [❓](papers/factor_evolution/01_AQuA/questions.md) | Jiacheng Guo 等（Princeton / Ant / Stanford） | [🔗](https://mp.weixin.qq.com/s/MEgyuiGTxyOlxVJ2EnVBzQ) | 两个互不连通的量化研究系统（挖因子 + 调模型），把打分的尺子焊死在 agent 够不到的地方 | [✏️](papers/factor_evolution/01_AQuA/thoughts.md) |
+| [Astar：8B 模型在生产环境跑 RSI](papers/factor_evolution/03_Astar/notes.md) | [📖](papers/factor_evolution/03_Astar/deep_reading.md) | [❓](papers/factor_evolution/03_Astar/questions.md) | 阿里 × 浙江大学 | [🔗](https://mp.weixin.qq.com/s/Eb6vKO6fvefasBvc-JJ9dQ) | 一个 8B 专用模型只会一件事——提出 AI 系统下一步演化方向；Lazada 广告召回无人值守 20 轮，GMV +4.86% | [✏️](papers/factor_evolution/03_Astar/thoughts.md) |
+| [AutoScientist-Quant：把量化研究当预算搜索](papers/factor_evolution/06_AutoScientist-Quant/notes.md) | [📖](papers/factor_evolution/06_AutoScientist-Quant/deep_reading.md) | [❓](papers/factor_evolution/06_AutoScientist-Quant/questions.md) | Zongqian Li 等（含 Google DeepMind 背景） | | 和 AQuA 同期对手；单一 controller 根据剩余预算统一调度从假设到 deployable strategy 的全流程 | [✏️](papers/factor_evolution/06_AutoScientist-Quant/thoughts.md) |
+| [QuantEvolver：把反馈从 prompt 搬进权重](papers/factor_evolution/07_QuantEvolver/notes.md) | [📖](papers/factor_evolution/07_QuantEvolver/deep_reading.md) | [❓](papers/factor_evolution/07_QuantEvolver/questions.md) | Lingzhe Zhang 等（Philip S. Yu 团队） | | RFT 替代 prompt-loop；把可执行回测评估转成 Miner LLM 参数更新，Diversity-Complementarity Reward 抗趋同 | [✏️](papers/factor_evolution/07_QuantEvolver/thoughts.md) |
 
 ---
 
@@ -30,12 +30,12 @@
 
 | 文章 | 结构阅读 | 问题阅读 | 作者来源 | 微信原文 | 一句话概括 | 个人笔记 |
 |------|---------|---------|----------|----------|-----------|----------|
-| EvolveTrade：经验驱动的策略自进化 | | | | | 工具使用型 LLM 交易 agent，每天从自身交易经验重写 policy（policy self-evolution，逐 refinement） | |
-| SHARP：自进化、可审计的规则策略 | | | | | 神经符号框架，策略 = 人类可读条件-动作规则；归因 agent 定位失效规则，做原子化编辑 | |
-| AlgoEvolve：交易程序的元进化 | | | | | LLM 进化框架，生成/评估/迭代可执行 Python 交易策略，涌现 regime-adaptive 规则自主切换 | |
-| Recursive Multi-Agent：递归组合策略 | | | | | 地缘不确定性下 4 专家 agent + Manager 迭代优化 portfolio；健康分递归加权、三触发熔断（回撤/GRS/波动）、约束均值-方差。论文用 RL 语汇并定义风险感知 reward（Eq.9，λ₁=0.8、λ₂=1.5），但**未给出梯度训练过程**（无 policy network / actor-critic / 参数更新），DQN 仅作对照 baseline；多智能体层在再平衡周期内不更新，作用是仲裁权重分歧 | |
+| [EvolveTrade：经验驱动的策略自进化](papers/strategy_evolution/08_EvolveTrade/notes.md) | [📖](papers/strategy_evolution/08_EvolveTrade/deep_reading.md) | [❓](papers/strategy_evolution/08_EvolveTrade/questions.md) | | | 工具使用型 LLM 交易 agent，每天从自身交易经验重写 policy（policy self-evolution，逐 refinement） | [✏️](papers/strategy_evolution/08_EvolveTrade/thoughts.md) |
+| [SHARP：自进化、可审计的规则策略](papers/strategy_evolution/09_SHARP/notes.md) | [📖](papers/strategy_evolution/09_SHARP/deep_reading.md) | [❓](papers/strategy_evolution/09_SHARP/questions.md) | | | 神经符号框架，策略 = 人类可读条件-动作规则；归因 agent 定位失效规则，做原子化编辑 | [✏️](papers/strategy_evolution/09_SHARP/thoughts.md) |
+| [AlgoEvolve：交易程序的元进化](papers/strategy_evolution/10_AlgoEvolve/notes.md) | [📖](papers/strategy_evolution/10_AlgoEvolve/deep_reading.md) | [❓](papers/strategy_evolution/10_AlgoEvolve/questions.md) | | | LLM 进化框架，生成/评估/迭代可执行 Python 交易策略，涌现 regime-adaptive 规则自主切换 | [✏️](papers/strategy_evolution/10_AlgoEvolve/thoughts.md) |
+| [Recursive Multi-Agent：递归组合策略](papers/strategy_evolution/11_RecursiveMultiAgent/notes.md) | [📖](papers/strategy_evolution/11_RecursiveMultiAgent/deep_reading.md) | [❓](papers/strategy_evolution/11_RecursiveMultiAgent/questions.md) | | | 地缘不确定性下 4 专家 agent + Manager 迭代优化 portfolio；健康分递归加权、三触发熔断（回撤/GRS/波动）、约束均值-方差。论文用 RL 语汇并定义风险感知 reward（Eq.9，λ₁=0.8、λ₂=1.5），但**未给出梯度训练过程**（无 policy network / actor-critic / 参数更新），DQN 仅作对照 baseline；多智能体层在再平衡周期内不更新，作用是仲裁权重分歧 | [✏️](papers/strategy_evolution/11_RecursiveMultiAgent/thoughts.md) |
 
-> 08–11 目前仅有 PDF，结构阅读 / 问题阅读 / 个人笔记待补。
+> 08–11 已有 PDF 与空白 md 骨架，内容待填充。
 
 ---
 
@@ -43,9 +43,9 @@
 
 | 文章 | 结构阅读 | 问题阅读 | 作者来源 | 微信原文 | 一句话概括 | 个人笔记 |
 |------|---------|---------|----------|----------|-----------|----------|
-| [AutoResearch 行业深度调查](papers/other/02_AutoResearch_Industry/notes.md) | [📖 结构阅读](papers/other/02_AutoResearch_Industry/deep_reading.md) | | 公众号深度调查（汇编公开来源） | [微信原文](https://mp.weixin.qq.com/s/z0B8QFnsfrPQ3y6JVhQv-A) | 从 Jane Street 150 亿美元七月说起，把 AI 自动量化追到桥水/Man/Citadel/幻方的真实部署与事故账单 | [✏️ 个人笔记](papers/other/02_AutoResearch_Industry/thoughts.md) |
-| [Dream-RSI：在历史发现树上做梦](papers/other/04_Dream-RSI/notes.md) | [📖 结构阅读](papers/other/04_Dream-RSI/deep_reading.md) | | Google 系团队 | [微信原文](https://mp.weixin.qq.com/s/NwO-gQl96t_gumJhPs2kEA) | 不重训模型，让"找知识的方法"在历史发现树上做梦进化；元层自改进，执行层一行不改 | [✏️ 个人笔记](papers/other/04_Dream-RSI/thoughts.md) |
-| [RSI 三根缰绳：全局框架](papers/other/05_RSI_ThreeReins/notes.md) | [📖 结构阅读](papers/other/05_RSI_ThreeReins/deep_reading.md) | | 公众号综述（自建框架） | [微信原文](https://mp.weixin.qq.com/s/wf1KOGRfXpefa0vtw8OdMw) | 把整个 RSI 领域压成最小回路 + 三根缰绳：裁判在哪环内、燃料从哪来、改进多少传回改进者 | [✏️ 个人笔记](papers/other/05_RSI_ThreeReins/thoughts.md) |
+| [AutoResearch 行业深度调查](papers/other/02_AutoResearch_Industry/notes.md) | [📖](papers/other/02_AutoResearch_Industry/deep_reading.md) | [❓](papers/other/02_AutoResearch_Industry/questions.md) | 公众号深度调查（汇编公开来源） | [🔗](https://mp.weixin.qq.com/s/z0B8QFnsfrPQ3y6JVhQv-A) | 从 Jane Street 150 亿美元七月说起，把 AI 自动量化追到桥水/Man/Citadel/幻方的真实部署与事故账单 | [✏️](papers/other/02_AutoResearch_Industry/thoughts.md) |
+| [Dream-RSI：在历史发现树上做梦](papers/other/04_Dream-RSI/notes.md) | [📖](papers/other/04_Dream-RSI/deep_reading.md) | [❓](papers/other/04_Dream-RSI/questions.md) | Google 系团队 | [🔗](https://mp.weixin.qq.com/s/NwO-gQl96t_gumJhPs2kEA) | 不重训模型，让"找知识的方法"在历史发现树上做梦进化；元层自改进，执行层一行不改 | [✏️](papers/other/04_Dream-RSI/thoughts.md) |
+| [RSI 三根缰绳：全局框架](papers/other/05_RSI_ThreeReins/notes.md) | [📖](papers/other/05_RSI_ThreeReins/deep_reading.md) | [❓](papers/other/05_RSI_ThreeReins/questions.md) | 公众号综述（自建框架） | [🔗](https://mp.weixin.qq.com/s/wf1KOGRfXpefa0vtw8OdMw) | 把整个 RSI 领域压成最小回路 + 三根缰绳：裁判在哪环内、燃料从哪来、改进多少传回改进者 | [✏️](papers/other/05_RSI_ThreeReins/thoughts.md) |
 
 ---
 
@@ -58,23 +58,23 @@ quant_library/
 ├── project/                           ← RegimeSeal 可运行研究管线
 └── papers/
     ├── data_evolution/
-    │   ├── 12_RD-Agent-Quant/ (paper.pdf, notes.md, wechat.md, thoughts.md, deep_reading.md)
-    │   ├── 13_TradingGroup/   (paper.pdf, notes.md, wechat.md, thoughts.md, deep_reading.md)
-    │   └── 14_FactorEngine/   (paper.pdf, notes.md, wechat.md, thoughts.md, deep_reading.md)
+    │   ├── 12_RD-Agent-Quant/ (paper.pdf, notes.md, questions.md, wechat.md, thoughts.md, deep_reading.md)
+    │   ├── 13_TradingGroup/   (paper.pdf, notes.md, questions.md, wechat.md, thoughts.md, deep_reading.md)
+    │   └── 14_FactorEngine/   (paper.pdf, notes.md, questions.md, wechat.md, thoughts.md, deep_reading.md)
     ├── factor_evolution/
-    │   ├── 01_AQuA/        (paper.pdf, wechat.md, notes.md, thoughts.md, deep_reading.md)
-    │   ├── 03_Astar/       (paper.pdf, wechat.md, notes.md, thoughts.md, deep_reading.md)
-    │   ├── 06_AutoScientist-Quant/ (paper.pdf, notes.md, thoughts.md, deep_reading.md)
-    │   └── 07_QuantEvolver/ (paper.pdf, notes.md, thoughts.md, deep_reading.md)
+    │   ├── 01_AQuA/        (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   ├── 03_Astar/       (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   ├── 06_AutoScientist-Quant/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   └── 07_QuantEvolver/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     ├── strategy_evolution/
-    │   ├── 08_EvolveTrade/          (paper.pdf)
-    │   ├── 09_SHARP/                (paper.pdf)
-    │   ├── 10_AlgoEvolve/           (paper.pdf)
-    │   └── 11_RecursiveMultiAgent/  (paper.pdf)
+    │   ├── 08_EvolveTrade/          (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   ├── 09_SHARP/                (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   ├── 10_AlgoEvolve/           (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   └── 11_RecursiveMultiAgent/  (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     └── other/
-        ├── 02_AutoResearch_Industry/ (wechat.md, notes.md, thoughts.md, deep_reading.md)
-        ├── 04_Dream-RSI/    (paper.pdf, wechat.md, notes.md, thoughts.md, deep_reading.md)
-        └── 05_RSI_ThreeReins/ (wechat.md, notes.md, thoughts.md, deep_reading.md)
+        ├── 02_AutoResearch_Industry/ (wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
+        ├── 04_Dream-RSI/    (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
+        └── 05_RSI_ThreeReins/ (wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
 ```
 
 ---
