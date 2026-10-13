@@ -7,45 +7,45 @@
 
 > 数据/标签一旦开放给 agent 迭代，最易引入泄漏（AQuA 因此把数据焊死），且"新数据是否更好"缺外部判据。下列三篇是这一方向目前找到的真实工作（2025–2026）。
 
-| # | 文章 | 笔记 | 作者 / 来源 | 一句话概括 | 关键词 | 对应论文 | 代码 | 个人思考 |
-|---|------|------|------------|-----------|--------|----------|------|----------|
-| 12 | [R&D-Agent-Quant](papers/data_evolution/12_RD-Agent-Quant/notes.md) | Yuante Li 等（Microsoft） | 首个 data-centric 多智能体，因子-模型联合优化；Research/Development 闭环 + 多臂老虎机调度，ARR 最高约 2×、因子少 70% | data-centric · 因子-模型联合优化 · Co-STEER · 多臂老虎机 · feedback | [arXiv:2505.15155](https://arxiv.org/abs/2505.15155) | [microsoft/RD-Agent](https://github.com/microsoft/RD-Agent) | [思考](papers/data_evolution/12_RD-Agent-Quant/thoughts.md) |
-| 13 | [TradingGroup](papers/data_evolution/13_TradingGroup/notes.md) | Feng Tian, Flora D. Salim, Hao Xue | 多智能体交易系统，自我反思 + 端到端数据合成/标注管线，用交易活动数据反哺后训练；含动态止损/止盈 | 数据合成 · 自我反思 · 多智能体 · 后训练 · 动态风控 | [arXiv:2508.17565](https://arxiv.org/abs/2508.17565) | 待核实 | [思考](papers/data_evolution/13_TradingGroup/thoughts.md) |
-| 14 | [FactorEngine](papers/data_evolution/14_FactorEngine/notes.md) | Qinhong Lin 等 | 程序级因子挖掘，因子=图灵完备代码；知识注入把研报转为可执行因子，经验知识库支持从失败学习 | 知识注入 · 程序级因子 · 三分离 · 经验知识库 · 从失败学习 | [arXiv:2603.16365](https://arxiv.org/abs/2603.16365) | 待核实 | [思考](papers/data_evolution/14_FactorEngine/thoughts.md) |
+| 文章 | 结构阅读 | 问题阅读 | 作者来源 | 微信原文 | 一句话概括 | 个人笔记 |
+|------|---------|---------|----------|----------|-----------|----------|
+| [R&D-Agent-Quant](papers/data_evolution/12_RD-Agent-Quant/notes.md) | [📖 结构阅读](papers/data_evolution/12_RD-Agent-Quant/deep_reading.md) | | Yuante Li 等（Microsoft） | | 首个 data-centric 多智能体，因子-模型联合优化；Research/Development 闭环 + 多臂老虎机调度，ARR 最高约 2×、因子少 70% | [✏️ 个人笔记](papers/data_evolution/12_RD-Agent-Quant/thoughts.md) |
+| [TradingGroup](papers/data_evolution/13_TradingGroup/notes.md) | [📖 结构阅读](papers/data_evolution/13_TradingGroup/deep_reading.md) | | Feng Tian, Flora D. Salim, Hao Xue | | 多智能体交易系统，自我反思 + 端到端数据合成/标注管线，用交易活动数据反哺后训练；含动态止损/止盈 | [✏️ 个人笔记](papers/data_evolution/13_TradingGroup/thoughts.md) |
+| [FactorEngine](papers/data_evolution/14_FactorEngine/notes.md) | [📖 结构阅读](papers/data_evolution/14_FactorEngine/deep_reading.md) | | Qinhong Lin 等 | | 程序级因子挖掘，因子=图灵完备代码；知识注入把研报转为可执行因子，经验知识库支持从失败学习 | [✏️ 个人笔记](papers/data_evolution/14_FactorEngine/thoughts.md) |
 
 ---
 
 ### 🔢 因子进化（Factor Evolution）
 
-| # | 文章 | 深度精读 | 作者 / 来源 | 一句话概括 | 关键词 | 对应论文 | 微信原文 | 个人思考 |
-|---|------|---------|------------|-----------|--------|----------|----------|----------|
-| 01 | [AQuA：递归自我改进的量化研究 Agent](papers/factor_evolution/01_AQuA/notes.md) | [📖 精读](papers/factor_evolution/01_AQuA/deep_reading.md) | Jiacheng Guo 等（Princeton / Ant / Stanford） | 两个互不连通的量化研究系统（挖因子 + 调模型），把打分的尺子焊死在 agent 够不到的地方 | RSI · 密封沙箱 · operatorization · 双指标纪律 · embargo · 因子挖掘 · 时序模型 | [arXiv:2608.12841](https://arxiv.org/abs/2608.12841) | [微信原文](https://mp.weixin.qq.com/s/MEgyuiGTxyOlxVJ2EnVBzQ) | [思考](papers/factor_evolution/01_AQuA/thoughts.md) |
-| 03 | [Astar：8B 模型在生产环境跑 RSI](papers/factor_evolution/03_Astar/notes.md) | [📖 精读](papers/factor_evolution/03_Astar/deep_reading.md) | 阿里 × 浙江大学 | 一个 8B 专用模型只会一件事——提出 AI 系统下一步演化方向；Lazada 广告召回无人值守 20 轮，GMV +4.86% | RSI · 工业闭环 · pairwise 数据工程 · 奖励模型 · GRPO · 增量校准 · 真实 A/B · Lazada | [arXiv:2608.27287](https://arxiv.org/abs/2608.27287) | [微信原文](https://mp.weixin.qq.com/s/Eb6vKO6fvefasBvc-JJ9dQ) | [思考](papers/factor_evolution/03_Astar/thoughts.md) |
-| 06 | [AutoScientist-Quant：把量化研究当预算搜索](papers/factor_evolution/06_AutoScientist-Quant/notes.md) | [📖 精读](papers/factor_evolution/06_AutoScientist-Quant/deep_reading.md) | Zongqian Li 等（含 Google DeepMind 背景） | 和 AQuA 同期对手；单一 controller 根据剩余预算统一调度从假设到 deployable strategy 的全流程 | RSI · budgeted search · controller · 共享 memory · CSI · 对照 AQuA | [arXiv:2608.28632](https://arxiv.org/abs/2608.28632) | — | [思考](papers/factor_evolution/06_AutoScientist-Quant/thoughts.md) |
-| 07 | [QuantEvolver：把反馈从 prompt 搬进权重](papers/factor_evolution/07_QuantEvolver/notes.md) | [📖 精读](papers/factor_evolution/07_QuantEvolver/deep_reading.md) | Lingzhe Zhang 等（Philip S. Yu 团队） | RFT 替代 prompt-loop；把可执行回测评估转成 Miner LLM 参数更新，Diversity-Complementarity Reward 抗趋同 | RSI · RFT · Factor DSL · Regime Backtest · 抗趋同 · 因子挖掘 | [arXiv:2605.15412](https://arxiv.org/abs/2605.15412) | — | [思考](papers/factor_evolution/07_QuantEvolver/thoughts.md) |
+| 文章 | 结构阅读 | 问题阅读 | 作者来源 | 微信原文 | 一句话概括 | 个人笔记 |
+|------|---------|---------|----------|----------|-----------|----------|
+| [AQuA：递归自我改进的量化研究 Agent](papers/factor_evolution/01_AQuA/notes.md) | [📖 结构阅读](papers/factor_evolution/01_AQuA/deep_reading.md) | | Jiacheng Guo 等（Princeton / Ant / Stanford） | [微信原文](https://mp.weixin.qq.com/s/MEgyuiGTxyOlxVJ2EnVBzQ) | 两个互不连通的量化研究系统（挖因子 + 调模型），把打分的尺子焊死在 agent 够不到的地方 | [✏️ 个人笔记](papers/factor_evolution/01_AQuA/thoughts.md) |
+| [Astar：8B 模型在生产环境跑 RSI](papers/factor_evolution/03_Astar/notes.md) | [📖 结构阅读](papers/factor_evolution/03_Astar/deep_reading.md) | | 阿里 × 浙江大学 | [微信原文](https://mp.weixin.qq.com/s/Eb6vKO6fvefasBvc-JJ9dQ) | 一个 8B 专用模型只会一件事——提出 AI 系统下一步演化方向；Lazada 广告召回无人值守 20 轮，GMV +4.86% | [✏️ 个人笔记](papers/factor_evolution/03_Astar/thoughts.md) |
+| [AutoScientist-Quant：把量化研究当预算搜索](papers/factor_evolution/06_AutoScientist-Quant/notes.md) | [📖 结构阅读](papers/factor_evolution/06_AutoScientist-Quant/deep_reading.md) | | Zongqian Li 等（含 Google DeepMind 背景） | | 和 AQuA 同期对手；单一 controller 根据剩余预算统一调度从假设到 deployable strategy 的全流程 | [✏️ 个人笔记](papers/factor_evolution/06_AutoScientist-Quant/thoughts.md) |
+| [QuantEvolver：把反馈从 prompt 搬进权重](papers/factor_evolution/07_QuantEvolver/notes.md) | [📖 结构阅读](papers/factor_evolution/07_QuantEvolver/deep_reading.md) | | Lingzhe Zhang 等（Philip S. Yu 团队） | | RFT 替代 prompt-loop；把可执行回测评估转成 Miner LLM 参数更新，Diversity-Complementarity Reward 抗趋同 | [✏️ 个人笔记](papers/factor_evolution/07_QuantEvolver/thoughts.md) |
 
 ---
 
 ### 📈 策略进化（Strategy Evolution）
 
-| # | 文章 | 深度精读 | 作者 / 来源 | 一句话概括 | 关键词 | 对应论文 | 个人思考 |
-|---|------|---------|------------|-----------|--------|----------|----------|
-| 08 | EvolveTrade：经验驱动的策略自进化 | *待补* | — | 工具使用型 LLM 交易 agent，每天从自身交易经验重写 policy（policy self-evolution，逐 refinement） | 策略自进化 · policy 重写 · 工具使用 · 交易经验 | [arXiv:2609.17632](https://arxiv.org/abs/2609.17632) | *待补* |
-| 09 | SHARP：自进化、可审计的规则策略 | *待补* | — | 神经符号框架，策略 = 人类可读条件-动作规则；归因 agent 定位失效规则，做原子化编辑 | 策略自进化 · 神经符号 · rubric policy · 规则归因 · 原子编辑 | [arXiv:2605.06822](https://arxiv.org/abs/2605.06822) | *待补* |
-| 10 | AlgoEvolve：交易程序的元进化 | *待补* | — | LLM 进化框架，生成/评估/迭代可执行 Python 交易策略，涌现 regime-adaptive 规则自主切换 | 策略自进化 · 程序进化 · 严格测试 · regime-adaptive | [arXiv:2606.26173](https://arxiv.org/abs/2606.26173) | *待补* |
-| 11 | Recursive Multi-Agent：递归组合策略 | *待补* | — | 地缘不确定性下 4 专家 agent + Manager 迭代优化 portfolio；健康分递归加权、三触发熔断（回撤/GRS/波动）、约束均值-方差。论文用 RL 语汇并定义风险感知 reward（Eq.9，λ₁=0.8、λ₂=1.5），但**未给出梯度训练过程**（无 policy network / actor-critic / 参数更新），DQN 仅作对照 baseline；多智能体层在再平衡周期内不更新，作用是仲裁权重分歧 | 策略自进化 · 多 agent · 组合 · 回撤控制 · 约束 MVO · 风险感知 reward | [arXiv:2605.25311](https://arxiv.org/abs/2605.25311) | *待补* |
+| 文章 | 结构阅读 | 问题阅读 | 作者来源 | 微信原文 | 一句话概括 | 个人笔记 |
+|------|---------|---------|----------|----------|-----------|----------|
+| EvolveTrade：经验驱动的策略自进化 | | | | | 工具使用型 LLM 交易 agent，每天从自身交易经验重写 policy（policy self-evolution，逐 refinement） | |
+| SHARP：自进化、可审计的规则策略 | | | | | 神经符号框架，策略 = 人类可读条件-动作规则；归因 agent 定位失效规则，做原子化编辑 | |
+| AlgoEvolve：交易程序的元进化 | | | | | LLM 进化框架，生成/评估/迭代可执行 Python 交易策略，涌现 regime-adaptive 规则自主切换 | |
+| Recursive Multi-Agent：递归组合策略 | | | | | 地缘不确定性下 4 专家 agent + Manager 迭代优化 portfolio；健康分递归加权、三触发熔断（回撤/GRS/波动）、约束均值-方差。论文用 RL 语汇并定义风险感知 reward（Eq.9，λ₁=0.8、λ₂=1.5），但**未给出梯度训练过程**（无 policy network / actor-critic / 参数更新），DQN 仅作对照 baseline；多智能体层在再平衡周期内不更新，作用是仲裁权重分歧 | |
 
-> 08–11 目前仅有 PDF，`notes / thoughts / deep_reading` 待补。
+> 08–11 目前仅有 PDF，结构阅读 / 问题阅读 / 个人笔记待补。
 
 ---
 
 ### 🗂 其他（综述 / 行业 / 方法论）
 
-| # | 文章 | 深度精读 | 作者 / 来源 | 一句话概括 | 关键词 | 对应论文 | 微信原文 | 个人思考 |
-|---|------|---------|------------|-----------|--------|----------|----------|----------|
-| 02 | [AutoResearch 行业深度调查](papers/other/02_AutoResearch_Industry/notes.md) | [📖 精读](papers/other/02_AutoResearch_Industry/deep_reading.md) | 公众号深度调查（汇编公开来源） | 从 Jane Street 150 亿美元七月说起，把 AI 自动量化追到桥水/Man/Citadel/幻方的真实部署与事故账单 | harness · 四代搜索引擎 · 评估工程学 · 记忆 · 事故史 · 桥水 AIA · AlphaGPT · 幻方/DeepSeek | 无单篇论文（汇编） | [微信原文](https://mp.weixin.qq.com/s/z0B8QFnsfrPQ3y6JVhQv-A) | [思考](papers/other/02_AutoResearch_Industry/thoughts.md) |
-| 04 | [Dream-RSI：在历史发现树上做梦](papers/other/04_Dream-RSI/notes.md) | [📖 精读](papers/other/04_Dream-RSI/deep_reading.md) | Google 系团队 | 不重训模型，让"找知识的方法"在历史发现树上做梦进化；元层自改进，执行层一行不改 | RSI · 元层探索 · 发现树回放 · 反事实 · PIT 加权 · Lasso · τ>1 | [arXiv:2609.14858](https://arxiv.org/abs/2609.14858) ｜ [代码](https://github.com/zhengkid/Dream-RSI) | [微信原文](https://mp.weixin.qq.com/s/NwO-gQl96t_gumJhPs2kEA) | [思考](papers/other/04_Dream-RSI/thoughts.md) |
-| 05 | [RSI 三根缰绳：全局框架](papers/other/05_RSI_ThreeReins/notes.md) | [📖 精读](papers/other/05_RSI_ThreeReins/deep_reading.md) | 公众号综述（自建框架） | 把整个 RSI 领域压成最小回路 + 三根缰绳：裁判在哪环内、燃料从哪来、改进多少传回改进者 | RSI 框架 · 裁判拓扑 · 模型坍缩 · 传动系数 τ · 六十年八站 · 四家族 | 综述坐标 [arXiv:2607.07663](https://arxiv.org/abs/2607.07663) | [微信原文](https://mp.weixin.qq.com/s/wf1KOGRfXpefa0vtw8OdMw) | [思考](papers/other/05_RSI_ThreeReins/thoughts.md) |
+| 文章 | 结构阅读 | 问题阅读 | 作者来源 | 微信原文 | 一句话概括 | 个人笔记 |
+|------|---------|---------|----------|----------|-----------|----------|
+| [AutoResearch 行业深度调查](papers/other/02_AutoResearch_Industry/notes.md) | [📖 结构阅读](papers/other/02_AutoResearch_Industry/deep_reading.md) | | 公众号深度调查（汇编公开来源） | [微信原文](https://mp.weixin.qq.com/s/z0B8QFnsfrPQ3y6JVhQv-A) | 从 Jane Street 150 亿美元七月说起，把 AI 自动量化追到桥水/Man/Citadel/幻方的真实部署与事故账单 | [✏️ 个人笔记](papers/other/02_AutoResearch_Industry/thoughts.md) |
+| [Dream-RSI：在历史发现树上做梦](papers/other/04_Dream-RSI/notes.md) | [📖 结构阅读](papers/other/04_Dream-RSI/deep_reading.md) | | Google 系团队 | [微信原文](https://mp.weixin.qq.com/s/NwO-gQl96t_gumJhPs2kEA) | 不重训模型，让"找知识的方法"在历史发现树上做梦进化；元层自改进，执行层一行不改 | [✏️ 个人笔记](papers/other/04_Dream-RSI/thoughts.md) |
+| [RSI 三根缰绳：全局框架](papers/other/05_RSI_ThreeReins/notes.md) | [📖 结构阅读](papers/other/05_RSI_ThreeReins/deep_reading.md) | | 公众号综述（自建框架） | [微信原文](https://mp.weixin.qq.com/s/wf1KOGRfXpefa0vtw8OdMw) | 把整个 RSI 领域压成最小回路 + 三根缰绳：裁判在哪环内、燃料从哪来、改进多少传回改进者 | [✏️ 个人笔记](papers/other/05_RSI_ThreeReins/thoughts.md) |
 
 ---
 
