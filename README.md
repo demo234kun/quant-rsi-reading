@@ -23,6 +23,7 @@
 | [Astar：8B 模型在生产环境跑 RSI](papers/factor_evolution/03_Astar/notes.md) | [📖](papers/factor_evolution/03_Astar/deep_reading.md) | [❓](papers/factor_evolution/03_Astar/questions.md) | [🔗](https://mp.weixin.qq.com/s/Eb6vKO6fvefasBvc-JJ9dQ) | 阿里 × 浙江大学 | 一个 8B 专用模型只会一件事——提出 AI 系统下一步演化方向；Lazada 广告召回无人值守 20 轮，GMV +4.86% | [✏️](papers/factor_evolution/03_Astar/thoughts.md) |
 | [AutoScientist-Quant：把量化研究当预算搜索](papers/factor_evolution/06_AutoScientist-Quant/notes.md) | [📖](papers/factor_evolution/06_AutoScientist-Quant/deep_reading.md) | [❓](papers/factor_evolution/06_AutoScientist-Quant/questions.md) | — | Zongqian Li 等（含 Google DeepMind 背景） | 和 AQuA 同期对手；单一 controller 根据剩余预算统一调度从假设到 deployable strategy 的全流程 | [✏️](papers/factor_evolution/06_AutoScientist-Quant/thoughts.md) |
 | [QuantEvolver：把反馈从 prompt 搬进权重](papers/factor_evolution/07_QuantEvolver/notes.md) | [📖](papers/factor_evolution/07_QuantEvolver/deep_reading.md) | [❓](papers/factor_evolution/07_QuantEvolver/questions.md) | — | Lingzhe Zhang 等（Philip S. Yu 团队） | RFT 替代 prompt-loop；把可执行回测评估转成 Miner LLM 参数更新，Diversity-Complementarity Reward 抗趋同 | [✏️](papers/factor_evolution/07_QuantEvolver/thoughts.md) |
+| [Beyond Prompting：自主因子投资框架](papers/factor_evolution/17_BeyondPrompting/notes.md) | [📖](papers/factor_evolution/17_BeyondPrompting/deep_reading.md) | [❓](papers/factor_evolution/17_BeyondPrompting/questions.md) | — | Allen Yikuan Huang, Zheqi Fan | 不依赖手动 prompt，把模型作为自驱动引擎内生生成可解释交易信号；严格样本外验证 + 经济逻辑要求防过拟合；美股多空组合 Sharpe 3.11、年化收益 59.53% | [✏️](papers/factor_evolution/17_BeyondPrompting/thoughts.md) |
 
 ---
 
@@ -50,6 +51,19 @@
 
 ---
 
+### 🧠 专家知识库（Expert Knowledge Base）
+
+> 把领域知识外化为 agent 可操作的结构化资产：memory、knowledge infrastructure、scaffolding、research memory。核心问题是"专家经验如何被拆解成 agent 能调用的模块"。
+
+| 文章 | 结构阅读 | 问题阅读 | 微信原文 | 作者来源 | 概括 | 个人笔记 |
+|------|---------|---------|----------|----------|------|----------|
+| [XALPHA：记忆驱动的 AI 量化研究员](papers/expert_knowledge/16_XALPHA/notes.md) | [📖](papers/expert_knowledge/16_XALPHA/deep_reading.md) | [❓](papers/expert_knowledge/16_XALPHA/questions.md) | [🔗](https://mp.weixin.qq.com/s/iwuaa75L3XTFSMGFV2nTUw) | Ziwei Li 等 | 多源研究记忆系统整合研报知识 + 历史发现反馈；Macro Brain 规划研究主题选 Archetype，Micro Brain 把假设转成可执行因子代码并做事前三方对齐 | [✏️](papers/expert_knowledge/16_XALPHA/thoughts.md) |
+| [KISS：科学仿真的知识基础设施](papers/expert_knowledge/18_KISS/notes.md) | [📖](papers/expert_knowledge/18_KISS/deep_reading.md) | [❓](papers/expert_knowledge/18_KISS/questions.md) | — | Ziwei Li, Liujun Zhu, Yuchen Liu 等 | 把专家经验外化为可验证建模算子 + 分阶段领域协议 + 诊断恢复机制；3000 次试验中带 KI 的 agent 端到端仿真成功率达 84%（无 KI <40%）；KDT 工具包自动生成 14 个地球科学领域 117 个模型的 KI。[代码](https://github.com/lzwei196/knowledge_dissection_toolkit) ｜ [平台](https://app.hydrocraft.ai) | [✏️](papers/expert_knowledge/18_KISS/thoughts.md) |
+| [微信文章](papers/expert_knowledge/19_WeChat_MM/notes.md) | [📖](papers/expert_knowledge/19_WeChat_MM/deep_reading.md) | [❓](papers/expert_knowledge/19_WeChat_MM/questions.md) | [🔗](https://mp.weixin.qq.com/s/_EB4CsN1uCNpcvbzKzz_lA) | 微信公众号 | 待阅读后补充概括 | [✏️](papers/expert_knowledge/19_WeChat_MM/thoughts.md) |
+| [微信文章](papers/expert_knowledge/20_WeChat_IuK/notes.md) | [📖](papers/expert_knowledge/20_WeChat_IuK/deep_reading.md) | [❓](papers/expert_knowledge/20_WeChat_IuK/questions.md) | [🔗](https://mp.weixin.qq.com/s/IuK1-0JGr43E9q1Eyf-PUQ) | 微信公众号 | 待阅读后补充概括 | [✏️](papers/expert_knowledge/20_WeChat_IuK/thoughts.md) |
+
+---
+
 ## 🗂 目录结构
 
 ```
@@ -66,13 +80,19 @@ quant_library/
     │   ├── 01_AQuA/        (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 03_Astar/       (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 06_AutoScientist-Quant/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
-    │   └── 07_QuantEvolver/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   ├── 07_QuantEvolver/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   └── 17_BeyondPrompting/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     ├── strategy_evolution/
     │   ├── 08_EvolveTrade/          (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 09_SHARP/                (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 10_AlgoEvolve/           (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 11_RecursiveMultiAgent/  (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   └── 15_F2Agent/              (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    ├── expert_knowledge/
+    │   ├── 16_XALPHA/      (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   ├── 18_KISS/        (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   ├── 19_WeChat_MM/   (notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   └── 20_WeChat_IuK/  (notes.md, questions.md, thoughts.md, deep_reading.md)
     └── other/
         ├── 02_AutoResearch_Industry/ (wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
         ├── 04_Dream-RSI/    (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
@@ -128,7 +148,10 @@ quant_library/
 12. **TradingGroup**: arXiv:2508.17565, 2025. https://arxiv.org/abs/2508.17565
 13. **FactorEngine**: arXiv:2603.16365, 2026. https://arxiv.org/abs/2603.16365
 14. **F²Agent**: Changshuo Liu, Yanzheng Jin, Shangfeng Cai, Peng Fang, Xiaokui Xiao, Beng Chin Ooi. *F²Agent: Financial Fusion of Agentic Intelligence for Multimodal Trading*. arXiv:2608.05668, 2026. https://arxiv.org/abs/2608.05668
-15. **MarkTechPost 对 AQuA 的报道**: https://www.marktechpost.com/2026/09/01/aqua-a-two-part-agentic-framework-for-autonomous-factor-discovery/
+15. **Beyond Prompting**: Allen Yikuan Huang, Zheqi Fan. *Beyond Prompting: An Autonomous Framework for Systematic Factor Investing via Agentic AI*. arXiv:2603.14288, 2026. https://arxiv.org/abs/2603.14288
+16. **XALPHA**: *XALPHA: A Memory-Driven AI Quant Researcher for Hypothesis-to-Code Alpha Discovery*. arXiv:2607.08332, 2026. https://arxiv.org/abs/2607.08332
+17. **KISS**: Ziwei Li, Liujun Zhu, Yuchen Liu, Yichen Zhao, Birk Li, Ruiqi Wu, Junliang Jin, Jianyun Zhang. *KISS: Knowledge Infrastructure for Scientific Simulation*. arXiv:2605.17856, 2026. https://arxiv.org/abs/2605.17856 ｜ 代码: https://github.com/lzwei196/knowledge_dissection_toolkit ｜ 平台: https://app.hydrocraft.ai
+18. **MarkTechPost 对 AQuA 的报道**: https://www.marktechpost.com/2026/09/01/aqua-a-two-part-agentic-framework-for-autonomous-factor-discovery/
 
 ### 微信解读原文
 
@@ -137,6 +160,9 @@ quant_library/
 3. Astar 深读: https://mp.weixin.qq.com/s/Eb6vKO6fvefasBvc-JJ9dQ
 4. Dream-RSI × 量化: https://mp.weixin.qq.com/s/NwO-gQl96t_gumJhPs2kEA
 5. RSI 三根缰绳全景: https://mp.weixin.qq.com/s/wf1KOGRfXpefa0vtw8OdMw
+6. XALPHA 解读: https://mp.weixin.qq.com/s/iwuaa75L3XTFSMGFV2nTUw
+7. 微信文章: https://mp.weixin.qq.com/s/_EB4CsN1uCNpcvbzKzz_lA
+8. 微信文章: https://mp.weixin.qq.com/s/IuK1-0JGr43E9q1Eyf-PUQ
 
 ### 相关奠基文献（笔记中引用）
 
