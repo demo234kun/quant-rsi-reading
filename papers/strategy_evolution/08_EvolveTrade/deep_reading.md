@@ -1,17 +1,4 @@
-```
 
-```
-
-```
-
-```
-
-
-```
-
-
-
-```
 
 # EvolveTrade：基于交易经验驱动策略优化的自进化大语言模型交易智能体
 
@@ -102,6 +89,7 @@
 
 原文 Figure 1 对比三种系统：
 
+<img width="2032" height="677" alt="image" src="https://github.com/user-attachments/assets/9bc1ef87-b7d6-4570-b2b9-a193e7c781e4" />
 
 | 维度          | (A) Static Agent   | (B) Static Tool-Calling Agent | (C) EvolveTrade    |
 | ------------- | ------------------ | ----------------------------- | ------------------ |
@@ -239,9 +227,9 @@ $$
 
 本文实际实现的工具集合为：
 
-$$
+$
 \mathcal T=\left\{t_{\mathrm{price}},t_{\mathrm{news}},t_{\mathrm{code}}\right\}
-$$
+$
 
 
 | 工具              | 原文实现名称       | 输入与功能                                          | 决策作用                             |
