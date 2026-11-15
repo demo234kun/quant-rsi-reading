@@ -1,7 +1,7 @@
 """
 EvolveTrade（论文 08）复现：经验驱动的自然语言策略自演化。
 
-论文核心机制（见 papers/strategy_evolution/08_EvolveTrade/note.md 与原文 §3、§5、§6.3）：
+论文核心机制（见 papers/strategy/08_EvolveTrade/note.md 与原文 §3、§5、§6.3）：
   1. 交易智能体（Trading Agent）：冻结骨干 LLM + 固定工具集 T={价格检索, 新闻检索, 代码解释器}。
      其行为完全由系统提示词——即“文本参数化策略” π_t——控制；策略规定工具调用优先级、
      信号校验与风控规则。每个交易日输出资产权重 w_t 及逐资产推理 d_t，构成决策轨迹 h_t=(w_t,d_t)。
