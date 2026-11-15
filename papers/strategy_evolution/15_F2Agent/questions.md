@@ -1,8 +1,7 @@
-# F²Agent: Financial Fusion of Agentic Intelligence for Multimodal Trading（arXiv:2608.05668）结构化精读（面向可复现）
+# F²Agent: Financial Fusion of Agentic Intelligence for Multimodal Trading（arXiv:2608.05668）
 
 > 
-> 论文：arXiv预印本 2026，32页，12图，19表
-> ⚠️ 免责声明：所有交易回测结果仅为论文仿真实验，**不构成任何投资建议**
+
 
 ## 1. 论文基础元信息
 
