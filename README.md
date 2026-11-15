@@ -3,11 +3,11 @@
 
 ## 📚 文章索引
 
-### 🥇 数据进化（Data Evolution）
+### 🥇 门槛进化（Data Evolution）
 
 > 数据/标签一旦开放给 agent 迭代，最易引入泄漏（AQuA 因此把数据焊死），且"新数据是否更好"缺外部判据。下列三篇是这一方向目前找到的真实工作（2025–2026）。
 
-| 文章 | 结构阅读 | 问题阅读 | 微信原文 | 作者来源 | 概括 | 个人笔记 |
+| 文章 | 结构阅读 | 问题阅读 | 微信文章 | 作者 | 概括 | 笔记 |
 |------|---------|---------|----------|----------|------|----------|
 | [R&D-Agent-Quant](papers/data_evolution/12_RD-Agent-Quant/notes.md) | [📖](papers/data_evolution/12_RD-Agent-Quant/deep_reading.md) | [❓](papers/data_evolution/12_RD-Agent-Quant/questions.md) | — | Yuante Li 等（Microsoft） | 首个 data-centric 多智能体，因子-模型联合优化；Research/Development 闭环 + 多臂老虎机调度，ARR 最高约 2×、因子少 70% | [✏️](papers/data_evolution/12_RD-Agent-Quant/thoughts.md) |
 | [TradingGroup](papers/data_evolution/13_TradingGroup/notes.md) | [📖](papers/data_evolution/13_TradingGroup/deep_reading.md) | [❓](papers/data_evolution/13_TradingGroup/questions.md) | — | Feng Tian, Flora D. Salim, Hao Xue | 多智能体交易系统，自我反思 + 端到端数据合成/标注管线，用交易活动数据反哺后训练；含动态止损/止盈 | [✏️](papers/data_evolution/13_TradingGroup/thoughts.md) |
