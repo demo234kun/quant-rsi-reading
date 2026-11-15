@@ -105,42 +105,13 @@ quant_library/
     │   ├── 19_WeChat_MM/   (notes.md, questions.md, thoughts.md, deep_reading.md)
     │   └── 20_WeChat_IuK/  (notes.md, questions.md, thoughts.md, deep_reading.md)
     ├── other/
-        ├── 02_AutoResearch_Industry/ (wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
-        ├── 04_Dream-RSI/    (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
-        ├── 05_RSI_ThreeReins/ (wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
-        └── 21_DarwinGodelMachine/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   ├── 02_AutoResearch_Industry/ (wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   ├── 04_Dream-RSI/    (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   ├── 05_RSI_ThreeReins/ (wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   └── 21_DarwinGodelMachine/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     └── benchmark/
         └── 22_FinForesight/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
 ```
-
----
-
-## 🧩 关键数字速查
-
-| 指标 | 数值 | 出处 |
-|---|---|---|
-| AQuA Part I 加密货币组合 Spearman IC | ~0.190（单因子仅 0.026–0.037） | 01 |
-| AQuA Part II 美股 per-stock IC | +0.0843（最强基线 GRU +0.0613） | 01 |
-| AQuA 美元中性策略 Sharpe @2bp | +2.50（完全因果 walk-forward +2.00） | 01 |
-| Astar 单提案真实执行成功率 | 0.6786（GPT-5.5 0.3071 / 人类 0.3229） | 03 |
-| Astar 奖励模型 AUC | 0.8487（人类专家 0.6142） | 03 |
-| Astar 线上 A/B | GMV +4.86%、广告收入 +1.82% | 03 |
-| Dream-RSI 求解器 runtime | 3587ms → 2931ms（Gemini-3.1-Pro） | 04 |
-| 自我裁判 24 代后报告/真实裂缝 | +1.19（密封裁判仅 -0.002） | 05 |
-| Jane Street 2026.7 单月亏损 | ~150 亿美元 | 02 |
-| AutoScientist-Quant | CSI universe 几乎所有指标最优（跨 backbone/market） | 06 |
-| QuantEvolver | 三个 market benchmark 主指标全面超 LLM 基线 | 07 |
-| 策略 08–11 | 关键数字待读 PDF 补 | 08–11 |
-
----
-
-## 🛣 建议阅读路线
-
-- **第一次读**：05（框架）→ 01（最严样本）→ 06（同期对照）→ 03（工业样本）
-- **做因子**：01 → 06 → 03 → 07
-- **做策略**：09（SHARP，最严谨）→ 08（EvolveTrade）→ 10（AlgoEvolve）→ 11
-- **关心方法论 / 不做量化**：05 → 04 → 03 → 07
-- **想看行业八卦与事故**：02
 
 ---
 
