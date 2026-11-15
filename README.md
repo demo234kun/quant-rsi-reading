@@ -3,15 +3,14 @@
 
 ## 📚 文章索引
 
-### 🥇 门槛进化（Data Evolution）
+### 🥇 门槛控制（Data Evolution）
 
-> 数据/标签一旦开放给 agent 迭代，最易引入泄漏（AQuA 因此把数据焊死），且"新数据是否更好"缺外部判据。下列三篇是这一方向目前找到的真实工作（2025–2026）。
+> 数据/标签一旦开放给 agent 迭代，最易引入泄漏（AQuA 因此把数据焊死），且"新数据是否更好"缺外部判据。下列两篇是这一方向目前找到的真实工作（2025–2026）。
 
 | 文章 | 结构阅读 | 问题阅读 | 微信文章 | 作者 | 概括 | 笔记 |
 |------|---------|---------|----------|----------|------|----------|
 | [R&D-Agent-Quant](papers/data_evolution/12_RD-Agent-Quant/notes.md) | [📖](papers/data_evolution/12_RD-Agent-Quant/deep_reading.md) | [❓](papers/data_evolution/12_RD-Agent-Quant/questions.md) | — | Yuante Li 等（Microsoft） | 首个 data-centric 多智能体，因子-模型联合优化；Research/Development 闭环 + 多臂老虎机调度，ARR 最高约 2×、因子少 70% | [✏️](papers/data_evolution/12_RD-Agent-Quant/thoughts.md) |
 | [TradingGroup](papers/data_evolution/13_TradingGroup/notes.md) | [📖](papers/data_evolution/13_TradingGroup/deep_reading.md) | [❓](papers/data_evolution/13_TradingGroup/questions.md) | — | Feng Tian, Flora D. Salim, Hao Xue | 多智能体交易系统，自我反思 + 端到端数据合成/标注管线，用交易活动数据反哺后训练；含动态止损/止盈 | [✏️](papers/data_evolution/13_TradingGroup/thoughts.md) |
-| [FactorEngine](papers/data_evolution/14_FactorEngine/notes.md) | [📖](papers/data_evolution/14_FactorEngine/deep_reading.md) | [❓](papers/data_evolution/14_FactorEngine/questions.md) | — | Qinhong Lin, Ruitao Feng 等 | 程序级因子挖掘，因子=图灵完备代码；知识注入把研报转为可执行因子，经验知识库支持从失败学习 | [✏️](papers/data_evolution/14_FactorEngine/thoughts.md) |
 
 ---
 
@@ -25,6 +24,7 @@
 | [QuantEvolver：把反馈从 prompt 搬进权重](papers/factor_evolution/07_QuantEvolver/notes.md) | [📖](papers/factor_evolution/07_QuantEvolver/deep_reading.md) | [❓](papers/factor_evolution/07_QuantEvolver/questions.md) | — | Lingzhe Zhang 等（Philip S. Yu 团队） | RFT 替代 prompt-loop；把可执行回测评估转成 Miner LLM 参数更新，Diversity-Complementarity Reward 抗趋同 | [✏️](papers/factor_evolution/07_QuantEvolver/thoughts.md) |
 | [Beyond Prompting: Autonomous Factor Investing via Agentic AI](papers/factor_evolution/17_BeyondPrompting/notes.md) | [📖](papers/factor_evolution/17_BeyondPrompting/deep_reading.md) | [❓](papers/factor_evolution/17_BeyondPrompting/questions.md) | — | Allen Yikuan Huang, Zheqi Fan | 不依赖手动 prompt，把模型作为自驱动引擎内生生成可解释交易信号；严格样本外验证 + 经济逻辑要求防过拟合；美股多空组合 Sharpe 3.11、年化收益 59.53% | [✏️](papers/factor_evolution/17_BeyondPrompting/thoughts.md) |
 | [XALPHA：记忆驱动的 AI 量化研究员](papers/factor_evolution/16_XALPHA/notes.md) | [📖](papers/factor_evolution/16_XALPHA/deep_reading.md) | [❓](papers/factor_evolution/16_XALPHA/questions.md) | [🔗](https://mp.weixin.qq.com/s/iwuaa75L3XTFSMGFV2nTUw) | Ziwei Li 等 | 多源研究记忆系统整合研报知识 + 历史发现反馈；Macro Brain 规划研究主题选 Archetype，Micro Brain 把假设转成可执行因子代码并做事前三方对齐 | [✏️](papers/factor_evolution/16_XALPHA/thoughts.md) |
+| [FactorEngine](papers/factor_evolution/14_FactorEngine/notes.md) | [📖](papers/factor_evolution/14_FactorEngine/deep_reading.md) | [❓](papers/factor_evolution/14_FactorEngine/questions.md) | — | Qinhong Lin, Ruitao Feng 等 | 程序级因子挖掘，因子=图灵完备代码；知识注入把研报转为可执行因子，经验知识库支持从失败学习 | [✏️](papers/factor_evolution/14_FactorEngine/thoughts.md) |
 
 ---
 
@@ -85,13 +85,13 @@ quant_library/
 └── papers/
     ├── data_evolution/
     │   ├── 12_RD-Agent-Quant/ (paper.pdf, notes.md, questions.md, wechat.md, thoughts.md, deep_reading.md)
-    │   ├── 13_TradingGroup/   (paper.pdf, notes.md, questions.md, wechat.md, thoughts.md, deep_reading.md)
-    │   └── 14_FactorEngine/   (paper.pdf, notes.md, questions.md, wechat.md, thoughts.md, deep_reading.md)
+    │   └── 13_TradingGroup/   (paper.pdf, notes.md, questions.md, wechat.md, thoughts.md, deep_reading.md)
     ├── factor_evolution/
     │   ├── 01_AQuA/        (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 03_Astar/       (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 06_AutoScientist-Quant/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 07_QuantEvolver/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    │   ├── 14_FactorEngine/ (paper.pdf, notes.md, questions.md, wechat.md, thoughts.md, deep_reading.md)
     │   ├── 16_XALPHA/      (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   └── 17_BeyondPrompting/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     ├── strategy_evolution/
