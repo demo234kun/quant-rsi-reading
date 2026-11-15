@@ -1,6 +1,6 @@
 # 金融 Agent 自进化精读库 · RSI Reading Library
 
-> 20 篇论文，六个栏目。点文章标题直接进 arXiv HTML 全文；📄 是本地 notes.md，📖 结构阅读，❓ 问题阅读，🔗 微信解读，✏️ 个人笔记。
+> 22 篇论文，六个栏目。点文章标题直接进 arXiv HTML 全文；📄 是本地 notes.md，📖 结构阅读，❓ 问题阅读，🔗 微信解读，✏️ 个人笔记。
 
 **导航**：[🛡 门槛控制](#-门槛控制--gating-control) ｜ [🔢 因子挖掘进化](#-因子挖掘进化--factor-mining-evolution) ｜ [📈 策略进化](#-策略进化--strategy-evolution) ｜ [♻️ 进化机制](#️-进化机制--evolution-mechanism) ｜ [🧠 记忆系统](#-记忆系统--memory-systems) ｜ [🌐 泛投资与财富管理](#-泛投资与财富管理--cross-asset--wealth-management)
 
@@ -66,6 +66,7 @@
 | 文章 | 结构阅读 | 问题阅读 | 微信解读 | 作者 | 一句话概括 | 笔记 |
 |------|---------|---------|----------|------|-----------|------|
 | [KISS：科学仿真的知识基础设施](https://arxiv.org/html/2605.17856v1) [📄](papers/memory/18_KISS/notes.md) | [📖](papers/memory/18_KISS/deep_reading.md) | [❓](papers/memory/18_KISS/questions.md) | [🔗](https://mp.weixin.qq.com/s/iwuaa75L3XTFSMGFV2nTUw) | Ziwei Li, Liujun Zhu, Yuchen Liu 等 | 把专家经验外化为可验证建模算子 + 分阶段领域协议 + 诊断恢复机制；3000 次试验中带 KI 的 agent 端到端仿真成功率达 84%（无 KI <40%）；KDT 工具包自动生成 14 个地球科学领域 117 个模型的 KI。[代码](https://github.com/lzwei196/knowledge_dissection_toolkit) ｜ [平台](https://app.hydrocraft.ai) | [✏️](papers/memory/18_KISS/thoughts.md) |
+| [MemTrial：记忆什么时候可信](https://arxiv.org/html/2610.11732v2) [📄](papers/memory/24_MemTrial/notes.md) | [📖](papers/memory/24_MemTrial/deep_reading.md) | [❓](papers/memory/24_MemTrial/questions.md) | — | Guanghao Wu, Zhuo Cai, Shoujin Wang | 用同一天的反事实设计实验（8 份草稿 + 班扎夫值）测出经验"改变了什么"，层级贝叶斯跨日池化，只在价值预测过未见日期时才信任，否则锚回 1/N；真实基准最多比 1/N 低 2.2%，而最强经验学习 agent 低 15–38% | [✏️](papers/memory/24_MemTrial/thoughts.md) |
 
 ---
 
@@ -77,12 +78,13 @@
 |------|---------|---------|----------|------|-----------|------|
 | [Recursive Multi-Agent：递归组合策略](https://arxiv.org/html/2605.25311v2) [📄](papers/cross_asset/11_RecursiveMultiAgent/notes.md) | [📖](papers/cross_asset/11_RecursiveMultiAgent/deep_reading.md) | [❓](papers/cross_asset/11_RecursiveMultiAgent/questions.md) | — | Jing Yang, Penghao Liang, Yichao Wu 等（Northeastern University） | 地缘不确定性下 4 专家 agent + Manager 迭代优化 portfolio；健康分递归加权、三触发熔断（回撤/GRS/波动）、约束均值-方差。论文用 RL 语汇定义风险感知 reward（Eq.9，λ₁=0.8、λ₂=1.5），但未给出梯度训练过程，DQN 仅作对照 baseline | [✏️](papers/cross_asset/11_RecursiveMultiAgent/thoughts.md) |
 | [LiveOption：LLM Agent 的结构化期权交易评测](https://arxiv.org/html/2609.33470v2) [📄](papers/cross_asset/23_LiveOption/notes.md) | [📖](papers/cross_asset/23_LiveOption/deep_reading.md) | [❓](papers/cross_asset/23_LiveOption/questions.md) | — | Haochen Luo, Yifan Li, Binh Minh An 等 7 人（NeurIPS 2026） | 三套期权任务（组合 overlay / 财报事件 / 0DTE）+ 分层指标在真实执行与资金约束下评测；8 个模型对冲口径主动收益全负，0DTE 与财报多数场次亏损、中位数全负，均值为正靠少数尾部 | [✏️](papers/cross_asset/23_LiveOption/thoughts.md) |
+| [SOTA：让 LLM 选策略而不是选合约](https://arxiv.org/html/2610.10407v1) [📄](papers/cross_asset/25_SOTA/notes.md) | [📖](papers/cross_asset/25_SOTA/deep_reading.md) | [❓](papers/cross_asset/25_SOTA/questions.md) | — | Yizhen Xie, Mengyang Liu（NeurIPS 2026 Agenthon Workshop） | 九类策略族 + 确定性解析器把"几千张合约"压成策略级决策，Qwen3.8-27B 走 SFT + GRPO；六个月样本外总收益 18.32%、Sharpe 1.60、MDD 8.96%，规则与监督基线全亏；RL 阶段保留新闻会把收益打到 −2.72% | [✏️](papers/cross_asset/25_SOTA/thoughts.md) |
 
 ---
 
 **收录约定**
 
 - 每篇一个目录，六件套：`paper.pdf`、`notes.md`、`deep_reading.md`、`questions.md`、`thoughts.md`、`wechat.md`（无对应材料则不建）。
-- 编号 01–23 保持不重排（02、19、20 已删除），新论文顺延 24 起。
+- 编号 01–25 保持不重排（02、19、20 已删除），新论文顺延 26 起。
 - 「文章」列直连 arXiv HTML 全文版，后面 📄 是本地 `notes.md`。
 - 「微信解读」列只放已核验能打开的公众号原文；没有对应文章的填 `—`，不补占位链接。
