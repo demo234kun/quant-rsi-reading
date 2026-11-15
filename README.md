@@ -65,6 +65,16 @@
 
 ---
 
+### 🎯 评测基准（Benchmark）
+
+> 这一栏收"怎么判分"的工作：不产出因子或策略，而是定义评测环境、控制信息边界、给深度研究系统打分。与 RSI 的关联在于——基准决定自我改进的信号来源，尺子偏了，改进就会朝错的方向收敛。
+
+| 文章 | 结构阅读 | 问题阅读 | 微信原文 | 作者来源 | 概括 | 个人笔记 |
+|------|---------|---------|----------|----------|------|----------|
+| [FinForesight：金融深度研究系统的诊断式回测基准](papers/benchmark/22_FinForesight/notes.md) | [📖](papers/benchmark/22_FinForesight/deep_reading.md) | [❓](papers/benchmark/22_FinForesight/questions.md) | — | Fengyuan Liu, Mukai Li, Jieshun You 等（8 位作者） | 中/美/港三市场四类预测任务（估值、收益排序、事件方向、未来财务基本面）+ 两项能力诊断（反事实推理、金融计算）分开计分；harness 把检索证据限制在预测日当时可得范围，并用预训练期 / 截断后 / 实时三种评测互相校验 | [✏️](papers/benchmark/22_FinForesight/thoughts.md) |
+
+---
+
 ## 🗂 目录结构
 
 ```
@@ -94,11 +104,13 @@ quant_library/
     │   ├── 18_KISS/        (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
     │   ├── 19_WeChat_MM/   (notes.md, questions.md, thoughts.md, deep_reading.md)
     │   └── 20_WeChat_IuK/  (notes.md, questions.md, thoughts.md, deep_reading.md)
-    └── other/
+    ├── other/
         ├── 02_AutoResearch_Industry/ (wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
         ├── 04_Dream-RSI/    (paper.pdf, wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
         ├── 05_RSI_ThreeReins/ (wechat.md, notes.md, questions.md, thoughts.md, deep_reading.md)
         └── 21_DarwinGodelMachine/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
+    └── benchmark/
+        └── 22_FinForesight/ (paper.pdf, notes.md, questions.md, thoughts.md, deep_reading.md)
 ```
 
 ---
@@ -155,6 +167,7 @@ quant_library/
 17. **KISS**: Ziwei Li, Liujun Zhu, Yuchen Liu, Yichen Zhao, Birk Li, Ruiqi Wu, Junliang Jin, Jianyun Zhang. *KISS: Knowledge Infrastructure for Scientific Simulation*. arXiv:2605.17856, 2026. https://arxiv.org/abs/2605.17856 ｜ 代码: https://github.com/lzwei196/knowledge_dissection_toolkit ｜ 平台: https://app.hydrocraft.ai
 18. **Darwin Gödel Machine**: Jenny Zhang, Shengran Hu, Cong Lu, Robert Lange, Jeff Clune. *Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents*. arXiv:2505.22954, 2025. https://arxiv.org/abs/2505.22954 ｜ 代码: https://github.com/jennyzzt/dgm ｜ 项目页: https://sakana.ai/dgm/
 19. **MarkTechPost 对 AQuA 的报道**: https://www.marktechpost.com/2026/09/01/aqua-a-two-part-agentic-framework-for-autonomous-factor-discovery/
+20. **FinForesight**: Fengyuan Liu, Mukai Li, Jieshun You, Yilin Zheng, Chenjia Min, Yizhou Zhang, Harper Chen, Qi Liu. *FinForesight: A Diagnostic Backtesting Benchmark for Deep Research Systems in Financial Forecasting*. arXiv:2611.01621v1 [cs.CL], 2026-11-01. https://arxiv.org/abs/2611.01621
 
 ### 微信解读原文
 
