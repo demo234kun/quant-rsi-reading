@@ -1,6 +1,6 @@
 # 金融 Agent 自进化精读库 · RSI Reading Library
 
-> 19 篇论文，六个栏目。点文章标题直接进 arXiv HTML 全文；📄 是本地 notes.md，📖 结构阅读，❓ 问题阅读，🔗 微信解读，✏️ 个人笔记。
+> 20 篇论文，六个栏目。点文章标题直接进 arXiv HTML 全文；📄 是本地 notes.md，📖 结构阅读，❓ 问题阅读，🔗 微信解读，✏️ 个人笔记。
 
 **导航**：[🛡 门槛控制](#-门槛控制--gating-control) ｜ [🔢 因子挖掘进化](#-因子挖掘进化--factor-mining-evolution) ｜ [📈 策略进化](#-策略进化--strategy-evolution) ｜ [♻️ 进化机制](#️-进化机制--evolution-mechanism) ｜ [🧠 记忆系统](#-记忆系统--memory-systems) ｜ [🌐 泛投资与财富管理](#-泛投资与财富管理--cross-asset--wealth-management)
 
@@ -41,7 +41,7 @@
 | 文章 | 结构阅读 | 问题阅读 | 微信解读 | 作者 | 一句话概括 | 笔记 |
 |------|---------|---------|----------|------|-----------|------|
 | [EvolveTrade：经验驱动的策略自进化](https://arxiv.org/html/2609.17632v1) [📄](papers/strategy/08_EvolveTrade/notes.md) | [📖](papers/strategy/08_EvolveTrade/deep_reading.md) | [❓](papers/strategy/08_EvolveTrade/questions.md) | — | Sehee Kim, Yumin Choi, Minki Kang, Sung Ju Hwang（KAIST） | 工具使用型 LLM 交易 agent，每天从自身交易经验重写 policy（policy self-evolution，逐 refinement） | [✏️](papers/strategy/08_EvolveTrade/thoughts.md) |
-| [SHARP：自进化、可审计的规则策略](https://arxiv.org/html/2605.06822v1) [📄](papers/strategy/09_SHARP/notes.md) | [📖](papers/strategy/09_SHARP/deep_reading.md) | [❓](papers/strategy/09_SHARP/questions.md) | — | Xiwen Chen, Wenhui Zhu, Songzhu Zheng, Kashif Rasul（Morgan Stanley / ASU） | 神经符号框架，策略 = 人类可读条件-动作规则；归因 agent 定位失效规则，做原子化编辑 | [✏️](papers/strategy/09_SHARP/thoughts.md) |
+| [SHARP：自进化、可审计的规则策略](https://arxiv.org/html/2605.06822v1) [📄](papers/strategy/09_SHARP/notes.md) | [📖](papers/strategy/09_SHARP/deep_reading.md) | [❓](papers/strategy/09_SHARP/questions.md) | — | Xiwen Chen, Wenhui Zhu, Songzhu Zheng, Kashif Rasul 等（Morgan Stanley / ASU / Columbia） | 神经符号框架，策略 = 人类可读条件-动作规则；归因 agent 定位失效规则，做原子化编辑 | [✏️](papers/strategy/09_SHARP/thoughts.md) |
 | [AlgoEvolve：交易程序的元进化](https://arxiv.org/html/2606.26173v1) [📄](papers/strategy/10_AlgoEvolve/notes.md) | [📖](papers/strategy/10_AlgoEvolve/deep_reading.md) | [❓](papers/strategy/10_AlgoEvolve/questions.md) | — | Dhruv Sharma, Gautam Shroff（IIIT Delhi） | LLM 进化框架，生成/评估/迭代可执行 Python 交易策略，涌现 regime-adaptive 规则自主切换 | [✏️](papers/strategy/10_AlgoEvolve/thoughts.md) |
 | [TradingGroup](https://arxiv.org/html/2508.17565v1) [📄](papers/strategy/13_TradingGroup/notes.md) | [📖](papers/strategy/13_TradingGroup/deep_reading.md) | [❓](papers/strategy/13_TradingGroup/questions.md) | — | Feng Tian, Flora D. Salim, Hao Xue | 多智能体交易系统，自我反思 + 端到端数据合成/标注管线，用交易活动数据反哺后训练；含动态止损/止盈 | [✏️](papers/strategy/13_TradingGroup/thoughts.md) |
 | [F²Agent：多模态金融交易智能体融合](https://arxiv.org/html/2608.05668v1) [📄](papers/strategy/15_F2Agent/notes.md) | [📖](papers/strategy/15_F2Agent/deep_reading.md) | [❓](papers/strategy/15_F2Agent/questions.md) | — | Changshuo Liu, Yanzheng Jin, Shangfeng Cai 等（NUS） | 多模态智能体交易框架：分层专用 agent 提取模态信号 + 模态感知自适应融合 + 噪声鲁棒一致性正则化；跑赢 16 个基线，年化收益平均提升 20%+ | [✏️](papers/strategy/15_F2Agent/thoughts.md) |
@@ -76,12 +76,13 @@
 | 文章 | 结构阅读 | 问题阅读 | 微信解读 | 作者 | 一句话概括 | 笔记 |
 |------|---------|---------|----------|------|-----------|------|
 | [Recursive Multi-Agent：递归组合策略](https://arxiv.org/html/2605.25311v2) [📄](papers/cross_asset/11_RecursiveMultiAgent/notes.md) | [📖](papers/cross_asset/11_RecursiveMultiAgent/deep_reading.md) | [❓](papers/cross_asset/11_RecursiveMultiAgent/questions.md) | — | Jing Yang, Penghao Liang, Yichao Wu 等（Northeastern University） | 地缘不确定性下 4 专家 agent + Manager 迭代优化 portfolio；健康分递归加权、三触发熔断（回撤/GRS/波动）、约束均值-方差。论文用 RL 语汇定义风险感知 reward（Eq.9，λ₁=0.8、λ₂=1.5），但未给出梯度训练过程，DQN 仅作对照 baseline | [✏️](papers/cross_asset/11_RecursiveMultiAgent/thoughts.md) |
+| [LiveOption：LLM Agent 的结构化期权交易评测](https://arxiv.org/html/2609.33470v2) [📄](papers/cross_asset/23_LiveOption/notes.md) | [📖](papers/cross_asset/23_LiveOption/deep_reading.md) | [❓](papers/cross_asset/23_LiveOption/questions.md) | — | Haochen Luo, Yifan Li, Binh Minh An 等 7 人（NeurIPS 2026） | 三套期权任务（组合 overlay / 财报事件 / 0DTE）+ 分层指标在真实执行与资金约束下评测；8 个模型对冲口径主动收益全负，0DTE 与财报多数场次亏损、中位数全负，均值为正靠少数尾部 | [✏️](papers/cross_asset/23_LiveOption/thoughts.md) |
 
 ---
 
 **收录约定**
 
 - 每篇一个目录，六件套：`paper.pdf`、`notes.md`、`deep_reading.md`、`questions.md`、`thoughts.md`、`wechat.md`（无对应材料则不建）。
-- 编号 01–22 保持不重排（02、19、20 已删除），新论文顺延 23 起。
+- 编号 01–23 保持不重排（02、19、20 已删除），新论文顺延 24 起。
 - 「文章」列直连 arXiv HTML 全文版，后面 📄 是本地 `notes.md`。
 - 「微信解读」列只放已核验能打开的公众号原文；没有对应文章的填 `—`，不补占位链接。
