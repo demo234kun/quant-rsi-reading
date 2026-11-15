@@ -4,7 +4,7 @@
 
 | 项 | 内容 |
 |---|---|
-| 论文来源 | arXiv:2610.11732v2 [cs.AI]；v1 2026-08 提交（2026-10-08），v2 2026-10-11 |
+| 论文来源 | arXiv:2610.11732v2 [cs.AI]；v1 2026-10-08，v2 2026-10-11 |
 | 论文题目 | MemTrial: Learning When to Trust Memory in LLM Portfolio Agents |
 | 作者 | Guanghao Wu, Zhuo Cai, Shoujin Wang |
 | 链接 | HTML 全文 https://arxiv.org/html/2610.11732v2 ｜ PDF 本地 `paper.pdf` |
